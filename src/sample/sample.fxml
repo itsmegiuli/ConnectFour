@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+
+<GridPane alignment="center" hgap="10" minHeight="-Infinity" minWidth="-Infinity" prefHeight="358.0" prefWidth="415.0" vgap="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="sample.Controller">
+
+   <children>
+      <ImageView fitHeight="358.0" fitWidth="415.0" GridPane.rowIndex="1">
+         <image>
+            <Image url="@../graphics/background.png" />
+         </image>
+      </ImageView>
+   </children>
+</GridPane>
