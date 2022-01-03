@@ -17,11 +17,6 @@
       </ImageView>
       <GridPane alignment="TOP_CENTER" GridPane.rowIndex="1">
         <columnConstraints>
-
-            <Button fx:id="choiceButton" onAction="#onChoiceButton"
-                    GridPane.columnIndex="7" GridPane.rowIndex="0"
-                    GridPane.halignment="TOP_CENTER" text="choiceButton"/>
-
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
