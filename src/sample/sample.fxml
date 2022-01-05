@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.geometry.Point3D?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.image.Image?>
@@ -10,7 +9,6 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.shape.Circle?>
 
 <HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
@@ -25,7 +23,7 @@
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <GridPane hgap="7.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="338.0" prefWidth="395.0" vgap="7.5">
+            <GridPane fx:id="playGround" hgap="7.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="338.0" prefWidth="395.0" vgap="7.5">
               <columnConstraints>
                   <ColumnConstraints fx:id="r0" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="50.0" />
                   <ColumnConstraints fx:id="r1" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="50.0" />
@@ -48,19 +46,13 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </GridPane.margin>
                <children>
-                  <ToggleButton fx:id="row0Button" mnemonicParsing="false" onAction="#row0" text="Hier" GridPane.rowIndex="6" />
-                  <ToggleButton fx:id="row1Button" mnemonicParsing="false" onAction="#row1" text="Hier" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                  <ToggleButton fx:id="row4Button" mnemonicParsing="false" onAction="#row4" text="Hier" GridPane.columnIndex="4" GridPane.rowIndex="6" />
-                  <ToggleButton fx:id="row6Button" mnemonicParsing="false" onAction="#row6" text="Hier" textAlignment="CENTER" GridPane.columnIndex="6" GridPane.rowIndex="6" />
-                  <ToggleButton fx:id="row5Button" mnemonicParsing="false" onAction="#row5" text="Hier" GridPane.columnIndex="5" GridPane.rowIndex="6" />
-                  <ToggleButton fx:id="row3Button" mnemonicParsing="false" onAction="#row3" text="Hier" GridPane.columnIndex="3" GridPane.rowIndex="6" />
-                  <ToggleButton fx:id="row2Button" mnemonicParsing="false" onAction="#row2" text="Hier" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-                  <Circle fx:id="chip" fill="RED" radius="25.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" visible="false" GridPane.columnIndex="5" GridPane.rowIndex="5">
-                     <rotationAxis>
-                        <Point3D />
-                     </rotationAxis>
-                  </Circle>
-                  <Circle fx:id="chip1" fill="RED" radius="25.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" visible="false" GridPane.rowIndex="5" />
+                  <ToggleButton fx:id="row0Button" mnemonicParsing="false" onAction="#col0" text="Hier" GridPane.rowIndex="6" />
+                  <ToggleButton fx:id="row1Button" mnemonicParsing="false" onAction="#col1" text="Hier" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <ToggleButton fx:id="row4Button" mnemonicParsing="false" onAction="#col4" text="Hier" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+                  <ToggleButton fx:id="row6Button" mnemonicParsing="false" onAction="#col6" text="Hier" GridPane.columnIndex="6" GridPane.rowIndex="6" />
+                  <ToggleButton fx:id="row5Button" mnemonicParsing="false" onAction="#col5" text="Hier" GridPane.columnIndex="5" GridPane.rowIndex="6" />
+                  <ToggleButton fx:id="row3Button" mnemonicParsing="false" onAction="#col3" text="Hier" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                  <ToggleButton fx:id="row2Button" mnemonicParsing="false" onAction="#col2" text="Hier" GridPane.columnIndex="2" GridPane.rowIndex="6" />
                </children>
             </GridPane>
             <ImageView fitHeight="358.0" fitWidth="415.0" preserveRatio="true" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647">
