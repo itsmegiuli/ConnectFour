@@ -46,13 +46,7 @@ public class Controller extends Shape {
     public GridPane playGround;
     int col0 = 5, col1 = 5, col2 = 5, col3 = 5, col4 = 5, col5 = 5, col6 = 5;
 
-    //  Player p1 = new Player("#00FF00", "Kenooo");
-    //  Player p2 = new Player("Yellow", "Ibrahimovic brate");
-    //  Controller MM = new Controller(p1, p2);
-    //  public Controller(Player p1, Player p2) {
-    //      this.p1 = p1;
-    //      this.p2 = p2;
-    //  }
+
     public char[][] gameBoard = new char[][]{
             {'-', '-', '-', '-', '-', '-', '-'},
             {'-', '-', '-', '-', '-', '-', '-'},
