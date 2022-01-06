@@ -4,14 +4,21 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.RowConstraints;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Shape;
 import javafx.stage.Stage;
+
+import java.util.Collection;
 
 import static javafx.application.Application.launch;
 
@@ -44,6 +51,9 @@ public class Controller extends Shape {
     public int rowcountercolm6 = 0;
     public int rowcountercolm0 = 0;
     public GridPane playGround;
+    public Button reset;
+    public RowConstraints rowForReset0, rowForReset1, rowForReset2, rowForReset3, rowForReset4, rowForReset5;
+    public Label yourTurnText;
     int col0 = 5, col1 = 5, col2 = 5, col3 = 5, col4 = 5, col5 = 5, col6 = 5;
 
 
@@ -272,6 +282,7 @@ public class Controller extends Shape {
             playGround.getChildren().add(newChip);
             if (counterForSwitchingPlayer % 2 == 1) {
                 newChip.setFill(Color.RED);
+                yourTurnText.setText ("Red, your turn");
             } else newChip.setFill(Color.YELLOW); //change color according to player
             GridPane.setRowIndex(newChip, col1);
             GridPane.setColumnIndex(newChip, 1);
@@ -480,7 +491,38 @@ public class Controller extends Shape {
     }
 
 
+
+
+
+    /**
+     * ## reset: nicht fertig.##
+     * To-Do: clear like it is BUT ONLY row 0-5 of gridpane(playground)
+     *
+     * */
+    public void reset(ActionEvent reset) {
+       // Circle circle = this.newChip;
+
+        playGround.getChildren().clear();
+        //playGround.getChildren().removeAll(newChip);
+        this.gameBoard = new char[][]{
+                {'-', '-', '-', '-', '-', '-', '-'},
+                {'-', '-', '-', '-', '-', '-', '-'},
+                {'-', '-', '-', '-', '-', '-', '-'},
+                {'-', '-', '-', '-', '-', '-', '-'},
+                {'-', '-', '-', '-', '-', '-', '-'},
+                {'-', '-', '-', '-', '-', '-', '-'},
+                {'-', '-', '-', '-', '-', '-', '-'},
+        };
+        System.out.println("reseted");
+
+    }
+
+
 }
+
+
+
+
 
 
 /**
