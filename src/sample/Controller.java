@@ -1,24 +1,15 @@
 package sample;
 
-import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Shape;
-import javafx.stage.Stage;
-
-import java.util.Collection;
 
 import static javafx.application.Application.launch;
 
@@ -58,32 +49,39 @@ public class Controller extends Shape {
 
 
     public char[][] gameBoard = new char[][]{
-            {'-', '-', '-', '-', '-', '-', '-'},
-            {'-', '-', '-', '-', '-', '-', '-'},
-            {'-', '-', '-', '-', '-', '-', '-'},
-            {'-', '-', '-', '-', '-', '-', '-'},
-            {'-', '-', '-', '-', '-', '-', '-'},
-            {'-', '-', '-', '-', '-', '-', '-'},
-            {'-', '-', '-', '-', '-', '-', '-'},
+            {'a', 'b', 'c', 'd', 'e', 'f', 'g'},
+            {'h', 'i', 'j', 'k', 'l', 'm', 'n'},
+            {'o', 'p', 'q', 'r', 's', 't', 'u'},
+            {'v', 'w', 'x', 'y', 'z', 'A', 'B'},
+            {'C', 'D', 'E', 'F', 'G', 'H', 'I'},
+            {'J', 'K', 'L', 'M', 'N', 'P', 'Q'},
+            {'R', 'S', 'T', 'U', 'V', 'W', 'Y'},
     };
 
 
     @FXML
     private ToggleButton row0Button, row1Button, row2Button, row3Button, row4Button, row5Button, row6Button;
 
-    public boolean checkifwon() {
-        boolean won = counterCheckFourVerticalYellowColm0 == 4 || counterCheckFourVerticalREDColm0 == 4 ||
-                counterCheckFourVerticalYellowColm1 == 4 || counterCheckFourVerticalREDColm1 == 4 ||
-                counterCheckFourVerticalYellowColm2 == 4 || counterCheckFourVerticalREDColm2 == 4 ||
-                counterCheckFourVerticalYellowColm3 == 4 || counterCheckFourVerticalREDColm3 == 4 ||
-                counterCheckFourVerticalYellowColm4 == 4 || counterCheckFourVerticalREDColm4 == 4 ||
-                counterCheckFourVerticalYellowColm5 == 4 || counterCheckFourVerticalREDColm5 == 4 ||
-                counterCheckFourVerticalYellowColm6 == 4 || counterCheckFourVerticalREDColm6 == 4;
+    public boolean checkIfWon() {
+        boolean won = false;
+
+        for (int j = 0; j < gameBoard.length; j++) { //horizontally
+            if (gameBoard[j][0]== gameBoard[j][1] &&  gameBoard[j][1] == gameBoard[j][2] && gameBoard[j][2]== gameBoard[j][3] ||
+                    gameBoard[j][1]== gameBoard[j][2] &&  gameBoard[j][2] == gameBoard[j][3] && gameBoard[j][3]== gameBoard[j][4] ||
+                    gameBoard[j][2]== gameBoard[j][3] &&  gameBoard[j][3] == gameBoard[j][4] && gameBoard[j][4]== gameBoard[j][5] ||
+                    gameBoard[j][3]== gameBoard[j][4] &&  gameBoard[j][4] == gameBoard[j][5] && gameBoard[j][5]== gameBoard[j][6]) {
+                won = true;
+            }
+            if (gameBoard[0][j]== gameBoard[1][j] &&  gameBoard[1][j] == gameBoard[2][j] && gameBoard[2][j] == gameBoard[3][j] ||
+            gameBoard[1][j]== gameBoard[2][j] &&  gameBoard[2][j] == gameBoard[3][j] && gameBoard[3][j] == gameBoard[4][j] ||
+            gameBoard[2][j]== gameBoard[3][j] &&  gameBoard[3][j] == gameBoard[4][j] && gameBoard[4][j] == gameBoard[5][j]) { //vertically
+                won = true;
+            }}
         return won;
     }
 
     public void col0(ActionEvent col0Event) { //method on click of Buttons (1-7)
-        if (!checkifwon()) {
+        if (!checkIfWon()) {
 
             counterForSwitchingPlayer++;
 
@@ -106,7 +104,7 @@ public class Controller extends Shape {
 
 
     public void col1(ActionEvent col1Event) {
-        if (!checkifwon()) {
+        if (!checkIfWon()) {
 
             counterForSwitchingPlayer++;
 
@@ -128,7 +126,7 @@ public class Controller extends Shape {
     }
 
     public void col2(ActionEvent col2Event) {
-        if (!checkifwon()) {
+        if (!checkIfWon()) {
 
             counterForSwitchingPlayer++;
 
@@ -150,7 +148,7 @@ public class Controller extends Shape {
     }
 
     public void col3(ActionEvent col3Event) {
-        if (!checkifwon()) {
+        if (!checkIfWon()) {
 
             counterForSwitchingPlayer++;
 
@@ -172,7 +170,7 @@ public class Controller extends Shape {
     }
 
     public void col4(ActionEvent col4Event) {
-        if (!checkifwon()) {
+        if (!checkIfWon()) {
 
             counterForSwitchingPlayer++;
 
@@ -194,7 +192,7 @@ public class Controller extends Shape {
     }
 
     public void col5(ActionEvent col5Event) {
-        if (!checkifwon()) {
+        if (!checkIfWon()) {
 
             counterForSwitchingPlayer++;
 
@@ -216,7 +214,7 @@ public class Controller extends Shape {
     }
 
     public void col6(ActionEvent col6Event) {
-        if (!checkifwon()) {
+        if (!checkIfWon()) {
 
             counterForSwitchingPlayer++;
 
