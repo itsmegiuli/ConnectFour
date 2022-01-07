@@ -45,6 +45,7 @@ public class Controller extends Shape {
     public Button reset;
     public RowConstraints rowForReset0, rowForReset1, rowForReset2, rowForReset3, rowForReset4, rowForReset5;
     public Label yourTurnText;
+    public Label whoWonText;
     int col0 = 5, col1 = 5, col2 = 5, col3 = 5, col4 = 5, col5 = 5, col6 = 5;
 
 
@@ -81,27 +82,22 @@ public class Controller extends Shape {
     }
 
     public void col0(ActionEvent col0Event) { //method on click of Buttons (1-7)
-        if (!checkIfWon()) {
 
-            counterForSwitchingPlayer++;
-
-            if (counterForSwitchingPlayer % 2 == 1) {
-                counterCheckFourVerticalREDColm0++;
-                counterCheckFourVerticalYellowColm0 = 0;
-            } else {
-                counterCheckFourVerticalYellowColm0++;
-                counterCheckFourVerticalREDColm0 = 0;
-            }
+        do {
             makeMoveCol0();
 
-        } else if (counterCheckFourVerticalYellowColm0 == 4)
-            System.out.println("Gelb hat gewonnen");
-        else if (counterCheckFourVerticalREDColm0 == 4)
-            System.out.println("Rot hat gewonnen");
-
+            if(checkIfWon() == true) {
+                if(counterForSwitchingPlayer %2==1) {
+                    whoWonText.setText("Yellow, you won!");
+                    whoWonText.setTextFill(Color.BLUE);
+            }else {
+                    whoWonText.setText("Red, you won!");
+                    whoWonText.setTextFill(Color.BLUE);
+                }
+            }
+    } while (!checkIfWon());
 
     }
-
 
     public void col1(ActionEvent col1Event) {
         if (!checkIfWon()) {
@@ -121,7 +117,6 @@ public class Controller extends Shape {
             System.out.println("Gelb hat gewonnen");
         else if (counterCheckFourVerticalREDColm1 == 4)
             System.out.println("Rot hat gewonnen");
-
 
     }
 
