@@ -1,6 +1,10 @@
 package sample;
 
 
+import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
+
 import static javafx.application.Application.launch;
 
 public class MakeMove {
@@ -12,5 +16,7 @@ public class MakeMove {
         this.p1 = p1;
         this.p2 = p2;
     }
-    }
+
+
+}
 

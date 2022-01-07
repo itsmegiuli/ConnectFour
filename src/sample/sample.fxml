@@ -90,7 +90,7 @@
             </Button>
             <Label fx:id="whoWonText" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="128.0" prefWidth="344.0" textFill="RED" GridPane.rowIndex="1">
                <font>
-                  <Font size="48.0" />
+                  <Font size="24.0" />
                </font>
             </Label>
          </children>

@@ -20,27 +20,14 @@ public class Controller extends Shape {
     public Player p1;
     public Player p2;
     public int counterForSwitchingPlayer = 1;
-    public int counterCheckFourVerticalREDColm0 = 0;
-    public int counterCheckFourVerticalYellowColm0 = 0;
-    public int counterCheckFourVerticalREDColm1 = 0;
-    public int counterCheckFourVerticalYellowColm1 = 0;
-    public int counterCheckFourVerticalREDColm2 = 0;
-    public int counterCheckFourVerticalYellowColm2 = 0;
-    public int counterCheckFourVerticalREDColm3 = 0;
-    public int counterCheckFourVerticalYellowColm3 = 0;
-    public int counterCheckFourVerticalREDColm4 = 0;
-    public int counterCheckFourVerticalYellowColm4 = 0;
-    public int counterCheckFourVerticalREDColm5 = 0;
-    public int counterCheckFourVerticalYellowColm5 = 0;
-    public int counterCheckFourVerticalREDColm6 = 0;
-    public int counterCheckFourVerticalYellowColm6 = 0;
-    public int rowcountercolm1 = 0;
-    public int rowcountercolm2 = 0;
-    public int rowcountercolm3 = 0;
-    public int rowcountercolm4 = 0;
-    public int rowcountercolm5 = 0;
-    public int rowcountercolm6 = 0;
-    public int rowcountercolm0 = 0;
+    public int counterCol0 = 0;
+    public int counterCol1 = 0;
+    public int counterCol2 = 0;
+    public int counterCol3 = 0;
+    public int counterCol4 = 0;
+    public int counterCol5 = 0;
+    public int counterCol6 = 0;
+
     public GridPane playGround;
     public Button reset;
     public RowConstraints rowForReset0, rowForReset1, rowForReset2, rowForReset3, rowForReset4, rowForReset5;
@@ -82,159 +69,114 @@ public class Controller extends Shape {
     }
 
     public void col0(ActionEvent col0Event) { //method on click of Buttons (1-7)
-
-        do {
+        if (!checkIfWon()) {
             makeMoveCol0();
-
-            if(checkIfWon() == true) {
-                if(counterForSwitchingPlayer %2==1) {
-                    whoWonText.setText("Yellow, you won!");
-                    whoWonText.setTextFill(Color.BLUE);
-            }else {
+        }
+        if (checkIfWon()) {
+                if (counterForSwitchingPlayer % 2 == 1) {
                     whoWonText.setText("Red, you won!");
-                    whoWonText.setTextFill(Color.BLUE);
+                    whoWonText.setTextFill(Color.RED);
+                } else {
+                    whoWonText.setText("Yellow, you won!");
+                    whoWonText.setTextFill(Color.YELLOW);
                 }
-            }
-    } while (!checkIfWon());
-
+        }
     }
 
     public void col1(ActionEvent col1Event) {
         if (!checkIfWon()) {
-
-            counterForSwitchingPlayer++;
-
-            if (counterForSwitchingPlayer % 2 == 1) {
-                counterCheckFourVerticalREDColm1++;
-                counterCheckFourVerticalYellowColm1 = 0;
-            } else {
-                counterCheckFourVerticalYellowColm1++;
-                counterCheckFourVerticalREDColm1 = 0;
-            }
             makeMoveCol1();
-
-        } else if (counterCheckFourVerticalYellowColm1 == 4)
-            System.out.println("Gelb hat gewonnen");
-        else if (counterCheckFourVerticalREDColm1 == 4)
-            System.out.println("Rot hat gewonnen");
-
+        }
+        if (checkIfWon()) {
+            if (counterForSwitchingPlayer % 2 == 1) {
+                whoWonText.setText("Red, you won!");
+                whoWonText.setTextFill(Color.RED);
+            } else {
+                whoWonText.setText("Yellow, you won!");
+                whoWonText.setTextFill(Color.YELLOW);
+            }
+        }
     }
 
     public void col2(ActionEvent col2Event) {
         if (!checkIfWon()) {
-
-            counterForSwitchingPlayer++;
-
-            if (counterForSwitchingPlayer % 2 == 1) {
-                counterCheckFourVerticalREDColm2++;
-                counterCheckFourVerticalYellowColm2 = 0;
-            } else {
-                counterCheckFourVerticalYellowColm2++;
-                counterCheckFourVerticalREDColm2 = 0;
-            }
             makeMoveCol2();
-
-        } else if (counterCheckFourVerticalYellowColm2 == 4)
-            System.out.println("Gelb hat gewonnen");
-        else if (counterCheckFourVerticalREDColm2 == 4)
-            System.out.println("Rot hat gewonnen");
-
-
+        }
+        if (checkIfWon()) {
+            if (counterForSwitchingPlayer % 2 == 1) {
+                whoWonText.setText("Red, you won!");
+                whoWonText.setTextFill(Color.RED);
+            } else {
+                whoWonText.setText("Yellow, you won!");
+                whoWonText.setTextFill(Color.YELLOW);
+            }
+        }
     }
 
     public void col3(ActionEvent col3Event) {
         if (!checkIfWon()) {
-
-            counterForSwitchingPlayer++;
-
-            if (counterForSwitchingPlayer % 2 == 1) {
-                counterCheckFourVerticalREDColm3++;
-                counterCheckFourVerticalYellowColm3 = 0;
-            } else {
-                counterCheckFourVerticalYellowColm3++;
-                counterCheckFourVerticalREDColm3 = 0;
-            }
             makeMoveCol3();
-
-        } else if (counterCheckFourVerticalYellowColm3 == 4)
-            System.out.println("Gelb hat gewonnen");
-        else if (counterCheckFourVerticalREDColm3 == 4)
-            System.out.println("Rot hat gewonnen");
-
-
+        }
+        if (checkIfWon()) {
+            if (counterForSwitchingPlayer % 2 == 1) {
+                whoWonText.setText("Red, you won!");
+                whoWonText.setTextFill(Color.RED);
+            } else {
+                whoWonText.setText("Yellow, you won!");
+                whoWonText.setTextFill(Color.YELLOW);
+            }
+        }
     }
 
     public void col4(ActionEvent col4Event) {
         if (!checkIfWon()) {
-
-            counterForSwitchingPlayer++;
-
-            if (counterForSwitchingPlayer % 2 == 1) {
-                counterCheckFourVerticalREDColm4++;
-                counterCheckFourVerticalYellowColm4 = 0;
-            } else {
-                counterCheckFourVerticalYellowColm4++;
-                counterCheckFourVerticalREDColm4 = 0;
-            }
             makeMoveCol4();
-
-        } else if (counterCheckFourVerticalYellowColm4 == 4)
-            System.out.println("Gelb hat gewonnen");
-        else if (counterCheckFourVerticalREDColm4 == 4)
-            System.out.println("Rot hat gewonnen");
-
-
+        }
+        if (checkIfWon()) {
+            if (counterForSwitchingPlayer % 2 == 1) {
+                whoWonText.setText("Red, you won!");
+                whoWonText.setTextFill(Color.RED);
+            } else {
+                whoWonText.setText("Yellow, you won!");
+                whoWonText.setTextFill(Color.YELLOW);
+            }
+        }
     }
 
     public void col5(ActionEvent col5Event) {
         if (!checkIfWon()) {
-
-            counterForSwitchingPlayer++;
-
-            if (counterForSwitchingPlayer % 2 == 1) {
-                counterCheckFourVerticalREDColm5++;
-                counterCheckFourVerticalYellowColm5 = 0;
-            } else {
-                counterCheckFourVerticalYellowColm5++;
-                counterCheckFourVerticalREDColm5 = 0;
-            }
             makeMoveCol5();
-
-        } else if (counterCheckFourVerticalYellowColm5 == 4)
-            System.out.println("Gelb hat gewonnen");
-        else if (counterCheckFourVerticalREDColm5 == 4)
-            System.out.println("Rot hat gewonnen");
-
-
+        }
+        if (checkIfWon()) {
+            if (counterForSwitchingPlayer % 2 == 1) {
+                whoWonText.setText("Red, you won!");
+                whoWonText.setTextFill(Color.RED);
+            } else {
+                whoWonText.setText("Yellow, you won!");
+                whoWonText.setTextFill(Color.YELLOW);
+            }
+        }
     }
 
     public void col6(ActionEvent col6Event) {
         if (!checkIfWon()) {
-
-            counterForSwitchingPlayer++;
-
-            if (counterForSwitchingPlayer % 2 == 1) {
-                counterCheckFourVerticalREDColm6++;
-                counterCheckFourVerticalYellowColm6 = 0;
-            } else {
-                counterCheckFourVerticalYellowColm6++;
-                counterCheckFourVerticalREDColm6 = 0;
-            }
             makeMoveCol6();
-
-        } else if (counterCheckFourVerticalYellowColm6 == 4)
-            System.out.println("Gelb hat gewonnen");
-        else if (counterCheckFourVerticalREDColm6 == 4)
-            System.out.println("Rot hat gewonnen");
-
-
+        }
+        if (checkIfWon()) {
+            if (counterForSwitchingPlayer % 2 == 1) {
+                whoWonText.setText("Red, you won!");
+                whoWonText.setTextFill(Color.RED);
+            } else {
+                whoWonText.setText("Yellow, you won!");
+                whoWonText.setTextFill(Color.YELLOW);
+            }
+        }
     }
-
-
     public void makeMoveCol0() {
 
-        rowcountercolm0++;
-        if (rowcountercolm0 <= 6) {
+        counterCol0++;
+        counterForSwitchingPlayer++;
+        if (counterCol0 <= 6) {
             Circle newChip = new Circle(25);
             playGround.getChildren().add(newChip);
             if (counterForSwitchingPlayer % 2 == 1) {
@@ -269,8 +211,9 @@ public class Controller extends Shape {
     }
 
     public void makeMoveCol1() {
-        rowcountercolm1++;
-        if (rowcountercolm1 <= 6) {
+        counterCol1++;
+        counterForSwitchingPlayer++;
+        if (counterCol1 <= 6) {
             Circle newChip = new Circle(25);
             playGround.getChildren().add(newChip);
             if (counterForSwitchingPlayer % 2 == 1) {
@@ -306,8 +249,10 @@ public class Controller extends Shape {
     }
 
     public void makeMoveCol2() {
-        rowcountercolm2++;
-        if (rowcountercolm2 <= 6) {
+        counterCol2++;
+        counterForSwitchingPlayer++;
+
+        if (counterCol2 <= 6) {
             Circle newChip = new Circle(25);
             playGround.getChildren().add(newChip);
             if (counterForSwitchingPlayer % 2 == 1) {
@@ -344,8 +289,10 @@ public class Controller extends Shape {
     }
 
     public void makeMoveCol3() {
-        rowcountercolm3++;
-        if (rowcountercolm3 <= 6) {
+        counterCol3++;
+        counterForSwitchingPlayer++;
+
+        if (counterCol3 <= 6) {
 
             Circle newChip = new Circle(25);
             playGround.getChildren().add(newChip);
@@ -378,8 +325,10 @@ public class Controller extends Shape {
     }
 
     public void makeMoveCol4() {
-        rowcountercolm4++;
-        if (rowcountercolm4 <= 6) {
+        counterCol4++;
+        counterForSwitchingPlayer++;
+
+        if (counterCol4 <= 6) {
 
             Circle newChip = new Circle(25);
             playGround.getChildren().add(newChip);
@@ -413,8 +362,10 @@ public class Controller extends Shape {
     }
 
     public void makeMoveCol5() {
-        rowcountercolm5++;
-        if (rowcountercolm5 <= 6) {
+        counterCol5++;
+        counterForSwitchingPlayer++;
+
+        if (counterCol5 <= 6) {
 
             Circle newChip = new Circle(25);
             playGround.getChildren().add(newChip);
@@ -449,8 +400,10 @@ public class Controller extends Shape {
     }
 
     public void makeMoveCol6() {
-        rowcountercolm6++;
-        if (rowcountercolm6 <= 6) {
+        counterCol6++;
+        counterForSwitchingPlayer++;
+
+        if (counterCol6 <= 6) {
 
             Circle newChip = new Circle(25);
             playGround.getChildren().add(newChip);
@@ -493,7 +446,7 @@ public class Controller extends Shape {
      *
      * */
     public void reset(ActionEvent reset) {
-       // Circle circle = this.newChip;
+        // Circle circle = this.newChip;
 
         playGround.getChildren().clear();
         //playGround.getChildren().removeAll(newChip);
@@ -512,35 +465,3 @@ public class Controller extends Shape {
 
 
 }
-
-
-
-
-
-
-/**
- * IDEA:
- * in each makemove, it should save either 1 or 2 (1 for p1, 2 for p2) to then check if won
- * check if won: like tic tac toe (4 1s next to each other/ 4 2s next to each other)
- * <p>
- * WORK IN PROGRESS, Giuli
- * <p>
- * WORK IN PROGRESS, Giuli
- * <p>
- * WORK IN PROGRESS, Giuli
- * <p>
- * WORK IN PROGRESS, Giuli
- * <p>
- * WORK IN PROGRESS, Giuli
- * <p>
- * WORK IN PROGRESS, Giuli
- * <p>
- * WORK IN PROGRESS, Giuli
- * <p>
- * WORK IN PROGRESS, Giuli
- */
-
-
-/**
- * WORK IN PROGRESS, Giuli
- */
