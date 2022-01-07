@@ -23,8 +23,8 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
-        Player p1 = new Player("#00FF00", "Kenooo");
-        Player p2 = new Player("Yellow", "Ibrahimovic brate");
+      //  Player p1 = new Player("#00FF00", "Kenooo");
+     //   Player p2 = new Player("Yellow", "Ibrahimovic brate");
        // MakeMove MM = new MakeMove(Player, p2);
         launch(args);
 

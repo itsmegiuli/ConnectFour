@@ -48,13 +48,34 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </GridPane.margin>
                <children>
-                  <ToggleButton fx:id="row0Button" mnemonicParsing="false" onAction="#col0" text="Hier" GridPane.rowIndex="6" />
-                  <ToggleButton fx:id="row1Button" mnemonicParsing="false" onAction="#col1" text="Hier" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                  <ToggleButton fx:id="row4Button" mnemonicParsing="false" onAction="#col4" text="Hier" GridPane.columnIndex="4" GridPane.rowIndex="6" />
-                  <ToggleButton fx:id="row6Button" mnemonicParsing="false" onAction="#col6" text="Hier" GridPane.columnIndex="6" GridPane.rowIndex="6" />
-                  <ToggleButton fx:id="row5Button" mnemonicParsing="false" onAction="#col5" text="Hier" GridPane.columnIndex="5" GridPane.rowIndex="6" />
-                  <ToggleButton fx:id="row3Button" mnemonicParsing="false" onAction="#col3" text="Hier" GridPane.columnIndex="3" GridPane.rowIndex="6" />
-                  <ToggleButton fx:id="row2Button" mnemonicParsing="false" onAction="#col2" text="Hier" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                  <ToggleButton fx:id="row0Button" mnemonicParsing="false" onAction="#col0" text="   ↑   " GridPane.rowIndex="6">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font></ToggleButton>
+                  <ToggleButton fx:id="row1Button" mnemonicParsing="false" onAction="#col1" text="   ↑   " GridPane.columnIndex="1" GridPane.rowIndex="6">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font></ToggleButton>
+                  <ToggleButton fx:id="row4Button" mnemonicParsing="false" onAction="#col4" text="   ↑   " GridPane.columnIndex="4" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="14.0" />
+                     </font></ToggleButton>
+                  <ToggleButton fx:id="row6Button" mnemonicParsing="false" onAction="#col6" text="   ↑   " GridPane.columnIndex="6" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="14.0" />
+                     </font></ToggleButton>
+                  <ToggleButton fx:id="row5Button" mnemonicParsing="false" onAction="#col5" text="   ↑   " GridPane.columnIndex="5" GridPane.rowIndex="6">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font></ToggleButton>
+                  <ToggleButton fx:id="row3Button" mnemonicParsing="false" onAction="#col3" text="   ↑   " GridPane.columnIndex="3" GridPane.rowIndex="6">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font></ToggleButton>
+                  <ToggleButton fx:id="row2Button" mnemonicParsing="false" onAction="#col2" text="   ↑   " GridPane.columnIndex="2" GridPane.rowIndex="6">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font></ToggleButton>
                </children>
             </GridPane>
             <ImageView fitHeight="358.0" fitWidth="415.0" preserveRatio="true" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647">
@@ -75,9 +96,9 @@
             <RowConstraints maxHeight="185.60001220703128" minHeight="10.0" prefHeight="69.80002441406248" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Label fx:id="yourTurnText" alignment="CENTER" prefHeight="128.0" prefWidth="344.0">
+            <Label fx:id="yourTurnText" alignment="CENTER" prefHeight="128.0" prefWidth="344.0" text="Yellow, start the game!">
                <font>
-                  <Font size="13.0" />
+                  <Font size="18.0" />
                </font>
             </Label>
             <Button fx:id="reset" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#reset" text="Reset / Play Again" textAlignment="CENTER" GridPane.rowIndex="3">
@@ -88,9 +109,19 @@
                   <Insets bottom="5.0" left="200.0" right="5.0" top="5.0" />
                </GridPane.margin>
             </Button>
-            <Label fx:id="whoWonText" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="128.0" prefWidth="344.0" textFill="RED" GridPane.rowIndex="1">
+            <Label fx:id="whoWonText" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="128.0" prefWidth="344.0" textFill="#01009e" wrapText="true" GridPane.rowIndex="1">
                <font>
-                  <Font size="24.0" />
+                  <Font size="48.0" />
+               </font>
+            </Label>
+            <Label fx:id="yourTurnText1" alignment="CENTER" prefHeight="128.0" prefWidth="344.0" text="How to play: Click the button of the column you want to put your chip in! To win: place 4 chips of your colour on a row (either horizontally or vertically)." wrapText="true" GridPane.rowIndex="2">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="fullCol" alignment="CENTER" layoutX="10.0" layoutY="129.0" prefHeight="128.0" prefWidth="344.0" text="That column is full! Try another one." textFill="RED" visible="false" GridPane.rowIndex="1">
+               <font>
+                  <Font size="20.0" />
                </font>
             </Label>
          </children>
