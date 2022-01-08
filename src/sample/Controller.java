@@ -11,11 +11,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Shape;
 
-import static javafx.application.Application.launch;
 
-/**
- * WORK IN PROGRESS, Giuli
- */
 public class Controller extends Shape {
     public Player p1;
     public Player p2;
@@ -33,7 +29,11 @@ public class Controller extends Shape {
     public RowConstraints rowForReset0, rowForReset1, rowForReset2, rowForReset3, rowForReset4, rowForReset5;
     public Label yourTurnText;
     public Label whoWonText;
+    public Label fullCol;
     int col0 = 5, col1 = 5, col2 = 5, col3 = 5, col4 = 5, col5 = 5, col6 = 5;
+    String yourTurnYellow = "Yellow, make your move!";
+    String yourTurnRed = "Red, make your move!";
+
 
 
     public char[][] gameBoard = new char[][]{
@@ -93,16 +93,17 @@ public class Controller extends Shape {
     }
 
     public void col0(ActionEvent col0Event) { //method on click of Buttons (1-7)
+
         if (!checkIfWon()) {
             makeMoveCol0();
         }
         if (checkIfWon()) {
                 if (counterForSwitchingPlayer % 2 == 1) {
                     whoWonText.setText("Red, you won!");
-                    whoWonText.setTextFill(Color.RED);
+                //    whoWonText.setTextFill(Color.RED);
                 } else {
                     whoWonText.setText("Yellow, you won!");
-                    whoWonText.setTextFill(Color.YELLOW);
+                 //   whoWonText.setTextFill(Color.YELLOW);
                 }
         }
     }
@@ -114,10 +115,10 @@ public class Controller extends Shape {
         if (checkIfWon()) {
             if (counterForSwitchingPlayer % 2 == 1) {
                 whoWonText.setText("Red, you won!");
-                whoWonText.setTextFill(Color.RED);
+                // whoWonText.setTextFill(Color.RED);
             } else {
                 whoWonText.setText("Yellow, you won!");
-                whoWonText.setTextFill(Color.YELLOW);
+                //  whoWonText.setTextFill(Color.YELLOW);
             }
         }
     }
@@ -129,10 +130,10 @@ public class Controller extends Shape {
         if (checkIfWon()) {
             if (counterForSwitchingPlayer % 2 == 1) {
                 whoWonText.setText("Red, you won!");
-                whoWonText.setTextFill(Color.RED);
+                //   whoWonText.setTextFill(Color.RED);
             } else {
                 whoWonText.setText("Yellow, you won!");
-                whoWonText.setTextFill(Color.YELLOW);
+                //  whoWonText.setTextFill(Color.YELLOW);
             }
         }
     }
@@ -144,10 +145,10 @@ public class Controller extends Shape {
         if (checkIfWon()) {
             if (counterForSwitchingPlayer % 2 == 1) {
                 whoWonText.setText("Red, you won!");
-                whoWonText.setTextFill(Color.RED);
+                //   whoWonText.setTextFill(Color.RED);
             } else {
                 whoWonText.setText("Yellow, you won!");
-                whoWonText.setTextFill(Color.YELLOW);
+                //  whoWonText.setTextFill(Color.YELLOW);
             }
         }
     }
@@ -159,10 +160,10 @@ public class Controller extends Shape {
         if (checkIfWon()) {
             if (counterForSwitchingPlayer % 2 == 1) {
                 whoWonText.setText("Red, you won!");
-                whoWonText.setTextFill(Color.RED);
+                //  whoWonText.setTextFill(Color.RED);
             } else {
                 whoWonText.setText("Yellow, you won!");
-                whoWonText.setTextFill(Color.YELLOW);
+                //  whoWonText.setTextFill(Color.YELLOW);
             }
         }
     }
@@ -174,10 +175,10 @@ public class Controller extends Shape {
         if (checkIfWon()) {
             if (counterForSwitchingPlayer % 2 == 1) {
                 whoWonText.setText("Red, you won!");
-                whoWonText.setTextFill(Color.RED);
+                //  whoWonText.setTextFill(Color.RED);
             } else {
                 whoWonText.setText("Yellow, you won!");
-                whoWonText.setTextFill(Color.YELLOW);
+                //  whoWonText.setTextFill(Color.YELLOW);
             }
         }
     }
@@ -189,10 +190,10 @@ public class Controller extends Shape {
         if (checkIfWon()) {
             if (counterForSwitchingPlayer % 2 == 1) {
                 whoWonText.setText("Red, you won!");
-                whoWonText.setTextFill(Color.RED);
+                //     whoWonText.setTextFill(Color.RED);
             } else {
                 whoWonText.setText("Yellow, you won!");
-                whoWonText.setTextFill(Color.YELLOW);
+                // whoWonText.setTextFill(Color.YELLOW);
             }
         }
     }
@@ -201,13 +202,17 @@ public class Controller extends Shape {
         counterCol0++;
         counterForSwitchingPlayer++;
         if (counterCol0 <= 6) {
+            fullColReset();
             Circle newChip = new Circle(25);
             playGround.getChildren().add(newChip);
             if (counterForSwitchingPlayer % 2 == 1) {
                 newChip.setFill(Color.RED);
-                //   counterCheckFourVerticalYellow++;
-                //  counterCheckFourVerticalRED = 0;
-            } else newChip.setFill(Color.YELLOW);
+                yourTurnText.setText (yourTurnYellow);
+            }
+            else {
+                newChip.setFill(Color.YELLOW); //change color according to player
+                yourTurnText.setText (yourTurnRed);
+            }
 
             GridPane.setRowIndex(newChip, col0);
             GridPane.setColumnIndex(newChip, 0);
@@ -228,8 +233,8 @@ public class Controller extends Shape {
             }
             col0--;
         } else {
-            System.out.println("Colm is full");
-            System.out.println();
+            fullCol();
+
         }
 
     }
@@ -238,14 +243,20 @@ public class Controller extends Shape {
         counterCol1++;
         counterForSwitchingPlayer++;
         if (counterCol1 <= 6) {
+            fullColReset();
             Circle newChip = new Circle(25);
             playGround.getChildren().add(newChip);
             if (counterForSwitchingPlayer % 2 == 1) {
                 newChip.setFill(Color.RED);
-                yourTurnText.setText ("Red, your turn");
-            } else newChip.setFill(Color.YELLOW); //change color according to player
+                yourTurnText.setText (yourTurnYellow);
+            }
+            else {
+                newChip.setFill(Color.YELLOW); //change color according to player
+                yourTurnText.setText (yourTurnRed);
+            }
             GridPane.setRowIndex(newChip, col1);
             GridPane.setColumnIndex(newChip, 1);
+
 
             if (counterForSwitchingPlayer % 2 == 1) {
                 gameBoard[col1][1] = 'X';
@@ -266,8 +277,8 @@ public class Controller extends Shape {
 
             }
         } else {
-            System.out.println("Colm is full");
-            System.out.println();
+            fullCol();
+
         }
 
     }
@@ -277,12 +288,17 @@ public class Controller extends Shape {
         counterForSwitchingPlayer++;
 
         if (counterCol2 <= 6) {
+            fullColReset();
             Circle newChip = new Circle(25);
             playGround.getChildren().add(newChip);
             if (counterForSwitchingPlayer % 2 == 1) {
                 newChip.setFill(Color.RED);
-            } else newChip.setFill(Color.YELLOW);
-            ; //change color according to player
+                yourTurnText.setText (yourTurnYellow);
+            }
+            else {
+                newChip.setFill(Color.YELLOW); //change color according to player
+                yourTurnText.setText (yourTurnRed);
+            }
             GridPane.setRowIndex(newChip, col2);
             GridPane.setColumnIndex(newChip, 2);
 
@@ -306,8 +322,8 @@ public class Controller extends Shape {
 
             }
         } else {
-            System.out.println("Colm is full");
-            System.out.println();
+            fullCol();
+
         }
 
     }
@@ -317,12 +333,17 @@ public class Controller extends Shape {
         counterForSwitchingPlayer++;
 
         if (counterCol3 <= 6) {
-
+            fullColReset();
             Circle newChip = new Circle(25);
             playGround.getChildren().add(newChip);
             if (counterForSwitchingPlayer % 2 == 1) {
                 newChip.setFill(Color.RED);
-            } else newChip.setFill(Color.YELLOW); //change color according to player
+                yourTurnText.setText (yourTurnYellow);
+            }
+            else {
+                newChip.setFill(Color.YELLOW); //change color according to player
+                yourTurnText.setText (yourTurnRed);
+            }
             GridPane.setRowIndex(newChip, col3);
             GridPane.setColumnIndex(newChip, 3);
 
@@ -342,8 +363,8 @@ public class Controller extends Shape {
 
             }
         } else {
-            System.out.println("Colm is full");
-            System.out.println();
+            fullCol();
+
         }
 
     }
@@ -353,12 +374,17 @@ public class Controller extends Shape {
         counterForSwitchingPlayer++;
 
         if (counterCol4 <= 6) {
-
+            fullColReset();
             Circle newChip = new Circle(25);
             playGround.getChildren().add(newChip);
             if (counterForSwitchingPlayer % 2 == 1) {
                 newChip.setFill(Color.RED);
-            } else newChip.setFill(Color.YELLOW); //change color according to player
+                yourTurnText.setText (yourTurnYellow);
+            }
+            else {
+                newChip.setFill(Color.YELLOW); //change color according to player
+                yourTurnText.setText (yourTurnRed);
+            }
             GridPane.setRowIndex(newChip, col4);
             GridPane.setColumnIndex(newChip, 4);
 
@@ -379,8 +405,8 @@ public class Controller extends Shape {
 
             }
         } else {
-            System.out.println("Colm is full");
-            System.out.println();
+            fullCol();
+
         }
 
     }
@@ -390,12 +416,17 @@ public class Controller extends Shape {
         counterForSwitchingPlayer++;
 
         if (counterCol5 <= 6) {
-
+            fullColReset();
             Circle newChip = new Circle(25);
             playGround.getChildren().add(newChip);
             if (counterForSwitchingPlayer % 2 == 1) {
                 newChip.setFill(Color.RED);
-            } else newChip.setFill(Color.YELLOW); //change color according to player
+                yourTurnText.setText (yourTurnYellow);
+            }
+            else {
+                newChip.setFill(Color.YELLOW); //change color according to player
+                yourTurnText.setText (yourTurnRed);
+            }
             GridPane.setRowIndex(newChip, col5);
             GridPane.setColumnIndex(newChip, 5);
 
@@ -416,8 +447,8 @@ public class Controller extends Shape {
 
             }
         } else {
-            System.out.println("Colm is full");
-            System.out.println();
+            fullCol();
+
         }
 
 
@@ -428,12 +459,17 @@ public class Controller extends Shape {
         counterForSwitchingPlayer++;
 
         if (counterCol6 <= 6) {
-
+            fullColReset();
             Circle newChip = new Circle(25);
             playGround.getChildren().add(newChip);
             if (counterForSwitchingPlayer % 2 == 1) {
                 newChip.setFill(Color.RED);
-            } else newChip.setFill(Color.YELLOW); //change color according to player
+                yourTurnText.setText (yourTurnYellow);
+            }
+            else {
+                newChip.setFill(Color.YELLOW); //change color according to player
+                yourTurnText.setText (yourTurnRed);
+            }
             GridPane.setRowIndex(newChip, col6);
             GridPane.setColumnIndex(newChip, 6);
 
@@ -455,8 +491,7 @@ public class Controller extends Shape {
             col6--; //fix: cant be less than 0
 
         } else {
-            System.out.println("Colm is full");
-            System.out.println();
+            fullCol();
         }
     }
 
@@ -486,6 +521,14 @@ public class Controller extends Shape {
         System.out.println("reseted");
 
     }
+    public void fullCol() {
+        fullCol.setVisible(true);
+        counterForSwitchingPlayer--;
+    }
 
-
+    public void fullColReset() {
+        if (fullCol.isVisible()) {
+            fullCol.setVisible((false));
+        }
+    }
 }
