@@ -9,11 +9,10 @@ import javafx.scene.shape.Circle;
 public class MakeMove {
 
     public static int counterForSwitchingPlayer = 1;
-    public static int counterCol0 = 0, counterCol1 = 0, counterCol2 = 0, counterCol3 = 0, counterCol4 = 0, counterCol5 = 0,counterCol6 = 0;
+    public static int counterCol0 = 0, counterCol1 = 0, counterCol2 = 0, counterCol3 = 0, counterCol4 = 0, counterCol5 = 0, counterCol6 = 0;
     public static int col0 = 5, col1 = 5, col2 = 5, col3 = 5, col4 = 5, col5 = 5, col6 = 5;
     static String yourTurnYellow = "Yellow, make your move!";
     static String yourTurnRed = "Red, make your move!";
-
 
 
     public static void makeMoveCol0(Controller controller) {
@@ -26,10 +25,10 @@ public class MakeMove {
             controller.playGround.getChildren().add(newChip);
             if (counterForSwitchingPlayer % 2 == 1) {
                 newChip.setFill(Color.RED);
-                controller.yourTurnText.setText (yourTurnYellow);
+                controller.yourTurnText.setText(yourTurnYellow);
             } else {
                 newChip.setFill(Color.YELLOW);
-                controller.yourTurnText.setText (yourTurnRed);
+                controller.yourTurnText.setText(yourTurnRed);
             }
             GridPane.setRowIndex(newChip, col0);
             GridPane.setColumnIndex(newChip, 0);
@@ -53,10 +52,10 @@ public class MakeMove {
             controller.playGround.getChildren().add(newChip);
             if (counterForSwitchingPlayer % 2 == 1) {
                 newChip.setFill(Color.RED);
-                controller.yourTurnText.setText (yourTurnYellow);
+                controller.yourTurnText.setText(yourTurnYellow);
             } else {
                 newChip.setFill(Color.YELLOW);
-                controller.yourTurnText.setText (yourTurnRed);
+                controller.yourTurnText.setText(yourTurnRed);
             }
             GridPane.setRowIndex(newChip, col1);
             GridPane.setColumnIndex(newChip, 1);
@@ -83,10 +82,10 @@ public class MakeMove {
 
             if (counterForSwitchingPlayer % 2 == 1) {
                 newChip.setFill(Color.RED);
-                controller.yourTurnText.setText (yourTurnYellow);
+                controller.yourTurnText.setText(yourTurnYellow);
             } else {
                 newChip.setFill(Color.YELLOW);
-                controller.yourTurnText.setText (yourTurnRed);
+                controller.yourTurnText.setText(yourTurnRed);
             }
             GridPane.setRowIndex(newChip, col2);
             GridPane.setColumnIndex(newChip, 2);
@@ -112,10 +111,10 @@ public class MakeMove {
             controller.playGround.getChildren().add(newChip);
             if (counterForSwitchingPlayer % 2 == 1) {
                 newChip.setFill(Color.RED);
-                controller.yourTurnText.setText (yourTurnYellow);
+                controller.yourTurnText.setText(yourTurnYellow);
             } else {
                 newChip.setFill(Color.YELLOW);
-                controller.yourTurnText.setText (yourTurnRed);
+                controller.yourTurnText.setText(yourTurnRed);
             }
             GridPane.setRowIndex(newChip, col3);
             GridPane.setColumnIndex(newChip, 3);
@@ -141,10 +140,10 @@ public class MakeMove {
             controller.playGround.getChildren().add(newChip);
             if (counterForSwitchingPlayer % 2 == 1) {
                 newChip.setFill(Color.RED);
-                controller.yourTurnText.setText (yourTurnYellow);
+                controller.yourTurnText.setText(yourTurnYellow);
             } else {
                 newChip.setFill(Color.YELLOW);
-                controller.yourTurnText.setText (yourTurnRed);
+                controller.yourTurnText.setText(yourTurnRed);
             }
             GridPane.setRowIndex(newChip, col4);
             GridPane.setColumnIndex(newChip, 4);
@@ -154,7 +153,7 @@ public class MakeMove {
             } else Main.gameBoard[col4][4] = 'O';
             col4--;
         } else {
-           Reset.fullCol(controller.fullCol);
+            Reset.fullCol(controller.fullCol);
         }
 
     }
@@ -169,10 +168,10 @@ public class MakeMove {
             controller.playGround.getChildren().add(newChip);
             if (counterForSwitchingPlayer % 2 == 1) {
                 newChip.setFill(Color.RED);
-                controller.yourTurnText.setText (yourTurnYellow);
+                controller.yourTurnText.setText(yourTurnYellow);
             } else {
                 newChip.setFill(Color.YELLOW);
-                controller.yourTurnText.setText (yourTurnRed);
+                controller.yourTurnText.setText(yourTurnRed);
             }
             GridPane.setRowIndex(newChip, col5);
             GridPane.setColumnIndex(newChip, 5);
@@ -200,10 +199,10 @@ public class MakeMove {
             controller.playGround.getChildren().add(newChip);
             if (counterForSwitchingPlayer % 2 == 1) {
                 newChip.setFill(Color.RED);
-                controller.yourTurnText.setText (yourTurnYellow);
+                controller.yourTurnText.setText(yourTurnYellow);
             } else {
                 newChip.setFill(Color.YELLOW);
-                controller.yourTurnText.setText (yourTurnRed);
+                controller.yourTurnText.setText(yourTurnRed);
             }
             GridPane.setRowIndex(newChip, col6);
             GridPane.setColumnIndex(newChip, 6);

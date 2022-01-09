@@ -101,7 +101,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button fx:id="reset" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#reset" text="Reset / Play Again" textAlignment="CENTER" visible="true" GridPane.rowIndex="3">
+            <Button fx:id="reset" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#resetButton" text="Reset / Play Again" textAlignment="CENTER" visible="true" GridPane.rowIndex="3">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -114,7 +114,7 @@
                   <Font size="36.0" />
                </font>
             </Label>
-            <Label fx:id="yourTurnText1" alignment="CENTER" prefHeight="128.0" prefWidth="344.0" text="How to play: Click the button of the column you want to put your chip in! To win: place 4 chips of your colour on a row (either horizontally, vertically or diagonally)." wrapText="true" GridPane.rowIndex="2">
+            <Label fx:id="yourTurnText1" alignment="CENTER" prefHeight="128.0" prefWidth="344.0" text="How to play: Click the button of the column you want to put your chip in! To win: place 4 chips of your colour in a row (either horizontally, vertically or diagonally)." wrapText="true" GridPane.rowIndex="2">
                <font>
                   <Font size="14.0" />
                </font>

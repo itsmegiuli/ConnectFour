@@ -1,7 +1,6 @@
 package connect4;
 
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
@@ -19,6 +18,7 @@ public class Controller extends Shape {
     public Label yourTurnText;
     public Label whoWonText;
     public Label fullCol;
+    public ToggleButton row0Button, row1Button, row2Button, row3Button, row4Button, row5Button, row6Button;
 
 
     public void col0(ActionEvent col0Event) { //method on click of Buttons (1-7)
@@ -119,24 +119,20 @@ public class Controller extends Shape {
         }
     }
 
-
-    public void reset(ActionEvent reset) {
-        // Circle circle = this.newChip;
+    public void resetButton(ActionEvent reset) {
 
         playGround.getChildren().clear();
+        playGround.getChildren().add(row0Button);
+        playGround.getChildren().add(row1Button);
+        playGround.getChildren().add(row2Button);
+        playGround.getChildren().add(row3Button);
+        playGround.getChildren().add(row4Button);
+        playGround.getChildren().add(row5Button);
+        playGround.getChildren().add(row6Button);
+        whoWonText.setText("");
+        yourTurnText.setText("Yellow, start again!");
 
-        Main.gameBoard = new char[][]{
-                {'a', 'b', 'c', 'd', 'e', 'f', 'g'},
-                {'h', 'i', 'j', 'k', 'l', 'm', 'n'},
-                {'o', 'p', 'q', 'r', 's', 't', 'u'},
-                {'v', 'w', 'x', 'y', 'z', 'A', 'B'},
-                {'C', 'D', 'E', 'F', 'G', 'H', 'I'},
-                {'J', 'K', 'L', 'M', 'N', 'P', 'Q'},
-                {'R', 'S', 'T', 'U', 'V', 'W', 'Y'},
-        };
-        System.out.println("reseted");
+        Reset.reset();
 
     }
-
-
 }

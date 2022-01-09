@@ -7,7 +7,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 
-
 public class Main extends Application {
 
 
@@ -22,7 +21,7 @@ public class Main extends Application {
     };
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("graphicInterface.fxml"));
         primaryStage.setTitle("Connect Four ... by Puzzled");
         primaryStage.setScene(new Scene(root, 800, 500));
