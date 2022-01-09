@@ -11,6 +11,15 @@ import javafx.stage.Stage;
 public class Main extends Application {
 
 
+    public static char[][] gameBoard = new char[][]{
+            {'a', 'b', 'c', 'd', 'e', 'f', 'g'},
+            {'h', 'i', 'j', 'k', 'l', 'm', 'n'},
+            {'o', 'p', 'q', 'r', 's', 't', 'u'},
+            {'v', 'w', 'x', 'y', 'z', 'A', 'B'},
+            {'C', 'D', 'E', 'F', 'G', 'H', 'I'},
+            {'J', 'K', 'L', 'M', 'N', 'P', 'Q'},
+            {'R', 'S', 'T', 'U', 'V', 'W', 'Y'},
+    };
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -22,9 +31,7 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
-      //  Player p1 = new Player("#00FF00", "Kenooo");
-     //   Player p2 = new Player("Yellow", "Ibrahimovic brate");
-       // MakeMove MM = new MakeMove(Player, p2);
+
         launch(args);
 
     }

@@ -21,25 +21,12 @@ public class Controller extends Shape {
     public Label fullCol;
 
 
-    public char[][] gameBoard = new char[][]{
-            {'a', 'b', 'c', 'd', 'e', 'f', 'g'},
-            {'h', 'i', 'j', 'k', 'l', 'm', 'n'},
-            {'o', 'p', 'q', 'r', 's', 't', 'u'},
-            {'v', 'w', 'x', 'y', 'z', 'A', 'B'},
-            {'C', 'D', 'E', 'F', 'G', 'H', 'I'},
-            {'J', 'K', 'L', 'M', 'N', 'P', 'Q'},
-            {'R', 'S', 'T', 'U', 'V', 'W', 'Y'},
-    };
-
-
-    @FXML
-    private ToggleButton row0Button, row1Button, row2Button, row3Button, row4Button, row5Button, row6Button;
 
     public void col0(ActionEvent col0Event) { //method on click of Buttons (1-7)
-        if (!CheckIfWon.checkIfWon(gameBoard)) {
+        if (!CheckIfWon.checkIfWon(Main.gameBoard)) {
             MakeMove.makeMoveCol0(this);
         }
-        if (CheckIfWon.checkIfWon(gameBoard)) {
+        if (CheckIfWon.checkIfWon(Main.gameBoard)) {
             yourTurnText.setText("");
             if (MakeMove.counterForSwitchingPlayer % 2 == 1) {
                 whoWonText.setText("Red, you won!");
@@ -50,10 +37,10 @@ public class Controller extends Shape {
     }
 
     public void col1(ActionEvent col1Event) {
-        if (!CheckIfWon.checkIfWon(gameBoard)) {
+        if (!CheckIfWon.checkIfWon(Main.gameBoard)) {
             MakeMove.makeMoveCol1(this);
         }
-        if (CheckIfWon.checkIfWon(gameBoard)) {
+        if (CheckIfWon.checkIfWon(Main.gameBoard)) {
             yourTurnText.setText("");
             if (MakeMove.counterForSwitchingPlayer % 2 == 1) {
                 whoWonText.setText("Red, you won!");
@@ -64,10 +51,10 @@ public class Controller extends Shape {
     }
 
     public void col2(ActionEvent col2Event) {
-        if (!CheckIfWon.checkIfWon(gameBoard)) {
+        if (!CheckIfWon.checkIfWon(Main.gameBoard)) {
             MakeMove.makeMoveCol2(this);
         }
-        if (CheckIfWon.checkIfWon(gameBoard)) {
+        if (CheckIfWon.checkIfWon(Main.gameBoard)) {
             yourTurnText.setText("");
             if (MakeMove.counterForSwitchingPlayer % 2 == 1) {
                 whoWonText.setText("Red, you won!");
@@ -78,10 +65,10 @@ public class Controller extends Shape {
     }
 
     public void col3(ActionEvent col3Event) {
-        if (!CheckIfWon.checkIfWon(gameBoard)) {
+        if (!CheckIfWon.checkIfWon(Main.gameBoard)) {
             MakeMove.makeMoveCol3(this);
         }
-        if (CheckIfWon.checkIfWon(gameBoard)) {
+        if (CheckIfWon.checkIfWon(Main.gameBoard)) {
             yourTurnText.setText("");
             if (MakeMove.counterForSwitchingPlayer % 2 == 1) {
                 whoWonText.setText("Red, you won!");
@@ -92,10 +79,10 @@ public class Controller extends Shape {
     }
 
     public void col4(ActionEvent col4Event) {
-        if (!CheckIfWon.checkIfWon(gameBoard)) {
+        if (!CheckIfWon.checkIfWon(Main.gameBoard)) {
             MakeMove.makeMoveCol4(this);
         }
-        if (CheckIfWon.checkIfWon(gameBoard)) {
+        if (CheckIfWon.checkIfWon(Main.gameBoard)) {
             yourTurnText.setText("");
             if (MakeMove.counterForSwitchingPlayer % 2 == 1) {
                 whoWonText.setText("Red, you won!");
@@ -106,10 +93,10 @@ public class Controller extends Shape {
     }
 
     public void col5(ActionEvent col5Event) {
-        if (!CheckIfWon.checkIfWon(gameBoard)) {
+        if (!CheckIfWon.checkIfWon(Main.gameBoard)) {
             MakeMove.makeMoveCol5(this);
         }
-        if (CheckIfWon.checkIfWon(gameBoard)) {
+        if (CheckIfWon.checkIfWon(Main.gameBoard)) {
             yourTurnText.setText("");
             if (MakeMove.counterForSwitchingPlayer % 2 == 1) {
                 whoWonText.setText("Red, you won!");
@@ -120,10 +107,10 @@ public class Controller extends Shape {
     }
 
     public void col6(ActionEvent col6Event) {
-        if (!CheckIfWon.checkIfWon(gameBoard)) {
+        if (!CheckIfWon.checkIfWon(Main.gameBoard)) {
             MakeMove.makeMoveCol6(this);
         }
-        if (CheckIfWon.checkIfWon(gameBoard)) {
+        if (CheckIfWon.checkIfWon(Main.gameBoard)) {
             yourTurnText.setText("");
             if (MakeMove.counterForSwitchingPlayer % 2 == 1) {
                 whoWonText.setText("Red, you won!");

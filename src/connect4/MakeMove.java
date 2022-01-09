@@ -13,14 +13,7 @@ public class MakeMove {
     public static int col0 = 5, col1 = 5, col2 = 5, col3 = 5, col4 = 5, col5 = 5, col6 = 5;
     static String yourTurnYellow = "Yellow, make your move!";
     static String yourTurnRed = "Red, make your move!";
-    public Player p1;
-    public Player p2;
 
-
-    public MakeMove(Player p1, Player p2) {
-        this.p1 = p1;
-        this.p2 = p2;
-    }
 
 
     public static void makeMoveCol0(Controller controller) {
@@ -41,8 +34,8 @@ public class MakeMove {
             GridPane.setRowIndex(newChip, col0);
             GridPane.setColumnIndex(newChip, 0);
             if (counterForSwitchingPlayer % 2 == 1) {
-                controller.gameBoard[col0][0] = 'X';
-            } else controller.gameBoard[col0][0] = 'O';
+                Main.gameBoard[col0][0] = 'X';
+            } else Main.gameBoard[col0][0] = 'O';
 
             col0--;
         } else {
@@ -69,8 +62,8 @@ public class MakeMove {
             GridPane.setColumnIndex(newChip, 1);
 
             if (counterForSwitchingPlayer % 2 == 1) {
-                controller.gameBoard[col1][1] = 'X';
-            } else controller.gameBoard[col1][1] = 'O';
+                Main.gameBoard[col1][1] = 'X';
+            } else Main.gameBoard[col1][1] = 'O';
             col1--;
 
         } else {
@@ -99,8 +92,8 @@ public class MakeMove {
             GridPane.setColumnIndex(newChip, 2);
 
             if (counterForSwitchingPlayer % 2 == 1) {
-                controller.gameBoard[col2][2] = 'X';
-            } else controller.gameBoard[col2][2] = 'O';
+                Main.gameBoard[col2][2] = 'X';
+            } else Main.gameBoard[col2][2] = 'O';
             col2--;
 
         } else {
@@ -128,8 +121,8 @@ public class MakeMove {
             GridPane.setColumnIndex(newChip, 3);
 
             if (counterForSwitchingPlayer % 2 == 1) {
-                controller.gameBoard[col3][3] = 'X';
-            } else controller.gameBoard[col3][3] = 'O';
+                Main.gameBoard[col3][3] = 'X';
+            } else Main.gameBoard[col3][3] = 'O';
             col3--;
 
         } else {
@@ -157,8 +150,8 @@ public class MakeMove {
             GridPane.setColumnIndex(newChip, 4);
 
             if (counterForSwitchingPlayer % 2 == 1) {
-                controller.gameBoard[col4][4] = 'X';
-            } else controller.gameBoard[col4][4] = 'O';
+                Main.gameBoard[col4][4] = 'X';
+            } else Main.gameBoard[col4][4] = 'O';
             col4--;
         } else {
            Reset.fullCol(controller.fullCol);
@@ -185,8 +178,8 @@ public class MakeMove {
             GridPane.setColumnIndex(newChip, 5);
 
             if (counterForSwitchingPlayer % 2 == 1) {
-                controller.gameBoard[col5][5] = 'X';
-            } else controller.gameBoard[col5][5] = 'O';
+                Main.gameBoard[col5][5] = 'X';
+            } else Main.gameBoard[col5][5] = 'O';
 
             col5--;
 
@@ -216,8 +209,8 @@ public class MakeMove {
             GridPane.setColumnIndex(newChip, 6);
 
             if (counterForSwitchingPlayer % 2 == 1) {
-                controller.gameBoard[col6][6] = 'X';
-            } else controller.gameBoard[col6][6] = 'O';
+                Main.gameBoard[col6][6] = 'X';
+            } else Main.gameBoard[col6][6] = 'O';
 
             col6--;
 
