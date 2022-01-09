@@ -21,7 +21,6 @@ public class Controller extends Shape {
     public Label fullCol;
 
 
-
     public void col0(ActionEvent col0Event) { //method on click of Buttons (1-7)
         if (!CheckIfWon.checkIfWon(Main.gameBoard)) {
             MakeMove.makeMoveCol0(this);
@@ -118,6 +117,25 @@ public class Controller extends Shape {
                 whoWonText.setText("Yellow, you won!");
             }
         }
+    }
+
+
+    public void reset(ActionEvent reset) {
+        // Circle circle = this.newChip;
+
+        playGround.getChildren().clear();
+
+        Main.gameBoard = new char[][]{
+                {'a', 'b', 'c', 'd', 'e', 'f', 'g'},
+                {'h', 'i', 'j', 'k', 'l', 'm', 'n'},
+                {'o', 'p', 'q', 'r', 's', 't', 'u'},
+                {'v', 'w', 'x', 'y', 'z', 'A', 'B'},
+                {'C', 'D', 'E', 'F', 'G', 'H', 'I'},
+                {'J', 'K', 'L', 'M', 'N', 'P', 'Q'},
+                {'R', 'S', 'T', 'U', 'V', 'W', 'Y'},
+        };
+        System.out.println("reseted");
+
     }
 
 

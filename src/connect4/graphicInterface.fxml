@@ -101,7 +101,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button fx:id="reset" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" text="Reset / Play Again" textAlignment="CENTER" visible="false" GridPane.rowIndex="3">
+            <Button fx:id="reset" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#reset" text="Reset / Play Again" textAlignment="CENTER" visible="true" GridPane.rowIndex="3">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
