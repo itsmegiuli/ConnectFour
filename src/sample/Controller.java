@@ -11,14 +11,10 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Shape;
 
-import static javafx.application.Application.launch;
 
-/**
- * WORK IN PROGRESS, Giuli
- */
 public class Controller extends Shape {
-    public Player p1;
-    public Player p2;
+    //  public Player p1;
+    //  public Player p2;
     public int counterForSwitchingPlayer = 1;
     public int counterCol0 = 0;
     public int counterCol1 = 0;
@@ -33,7 +29,10 @@ public class Controller extends Shape {
     public RowConstraints rowForReset0, rowForReset1, rowForReset2, rowForReset3, rowForReset4, rowForReset5;
     public Label yourTurnText;
     public Label whoWonText;
+    public Label fullCol;
     int col0 = 5, col1 = 5, col2 = 5, col3 = 5, col4 = 5, col5 = 5, col6 = 5;
+    String yourTurnYellow = "Yellow, make your move!";
+    String yourTurnRed = "Red, make your move!";
 
 
     public char[][] gameBoard = new char[][]{
@@ -72,8 +71,7 @@ public class Controller extends Shape {
                 int element = gameBoard[row][col];
                 if (element == gameBoard[row + 1][col + 1] &&
                         element == gameBoard[row + 2][col + 2] &&
-                        element == gameBoard[row + 3][col + 3])
-                {
+                        element == gameBoard[row + 3][col + 3]) {
                     won = true;
                 }
             }
@@ -83,8 +81,7 @@ public class Controller extends Shape {
                 int element = gameBoard[row][col];
                 if (element == gameBoard[row + 1][col - 1] &&
                         element == gameBoard[row + 2][col - 2] &&
-                        element == gameBoard[row + 3][col - 3])
-                {
+                        element == gameBoard[row + 3][col - 3]) {
                     won = true;
                 }
             }
@@ -97,12 +94,11 @@ public class Controller extends Shape {
             makeMoveCol0();
         }
         if (checkIfWon()) {
+            yourTurnText.setText("");
             if (counterForSwitchingPlayer % 2 == 1) {
                 whoWonText.setText("Red, you won!");
-                whoWonText.setTextFill(Color.RED);
             } else {
                 whoWonText.setText("Yellow, you won!");
-                whoWonText.setTextFill(Color.YELLOW);
             }
         }
     }
@@ -112,12 +108,11 @@ public class Controller extends Shape {
             makeMoveCol1();
         }
         if (checkIfWon()) {
+            yourTurnText.setText("");
             if (counterForSwitchingPlayer % 2 == 1) {
                 whoWonText.setText("Red, you won!");
-                whoWonText.setTextFill(Color.RED);
             } else {
                 whoWonText.setText("Yellow, you won!");
-                whoWonText.setTextFill(Color.YELLOW);
             }
         }
     }
@@ -127,12 +122,11 @@ public class Controller extends Shape {
             makeMoveCol2();
         }
         if (checkIfWon()) {
+            yourTurnText.setText("");
             if (counterForSwitchingPlayer % 2 == 1) {
                 whoWonText.setText("Red, you won!");
-                whoWonText.setTextFill(Color.RED);
             } else {
                 whoWonText.setText("Yellow, you won!");
-                whoWonText.setTextFill(Color.YELLOW);
             }
         }
     }
@@ -142,12 +136,11 @@ public class Controller extends Shape {
             makeMoveCol3();
         }
         if (checkIfWon()) {
+            yourTurnText.setText("");
             if (counterForSwitchingPlayer % 2 == 1) {
                 whoWonText.setText("Red, you won!");
-                whoWonText.setTextFill(Color.RED);
             } else {
                 whoWonText.setText("Yellow, you won!");
-                whoWonText.setTextFill(Color.YELLOW);
             }
         }
     }
@@ -157,12 +150,11 @@ public class Controller extends Shape {
             makeMoveCol4();
         }
         if (checkIfWon()) {
+            yourTurnText.setText("");
             if (counterForSwitchingPlayer % 2 == 1) {
                 whoWonText.setText("Red, you won!");
-                whoWonText.setTextFill(Color.RED);
             } else {
                 whoWonText.setText("Yellow, you won!");
-                whoWonText.setTextFill(Color.YELLOW);
             }
         }
     }
@@ -172,12 +164,11 @@ public class Controller extends Shape {
             makeMoveCol5();
         }
         if (checkIfWon()) {
+            yourTurnText.setText("");
             if (counterForSwitchingPlayer % 2 == 1) {
                 whoWonText.setText("Red, you won!");
-                whoWonText.setTextFill(Color.RED);
             } else {
                 whoWonText.setText("Yellow, you won!");
-                whoWonText.setTextFill(Color.YELLOW);
             }
         }
     }
@@ -187,49 +178,39 @@ public class Controller extends Shape {
             makeMoveCol6();
         }
         if (checkIfWon()) {
+            yourTurnText.setText("");
             if (counterForSwitchingPlayer % 2 == 1) {
                 whoWonText.setText("Red, you won!");
-                whoWonText.setTextFill(Color.RED);
             } else {
                 whoWonText.setText("Yellow, you won!");
-                whoWonText.setTextFill(Color.YELLOW);
             }
         }
     }
+
     public void makeMoveCol0() {
 
         counterCol0++;
         counterForSwitchingPlayer++;
         if (counterCol0 <= 6) {
+            fullColReset();
             Circle newChip = new Circle(25);
             playGround.getChildren().add(newChip);
             if (counterForSwitchingPlayer % 2 == 1) {
                 newChip.setFill(Color.RED);
-                //   counterCheckFourVerticalYellow++;
-                //  counterCheckFourVerticalRED = 0;
-            } else newChip.setFill(Color.YELLOW);
-
+                yourTurnText.setText (yourTurnYellow);
+            } else {
+                newChip.setFill(Color.YELLOW);
+                yourTurnText.setText (yourTurnRed);
+            }
             GridPane.setRowIndex(newChip, col0);
             GridPane.setColumnIndex(newChip, 0);
             if (counterForSwitchingPlayer % 2 == 1) {
                 gameBoard[col0][0] = 'X';
             } else gameBoard[col0][0] = 'O';
-            // if - 1 for player 1 // if: 2 for player 2
-            for (int i = 0; i <= 5; i++) {
-                System.out.print(gameBoard[i][0]);
-                System.out.print(gameBoard[i][1]);
-                System.out.print(gameBoard[i][2]);
-                System.out.print(gameBoard[i][3]);
-                System.out.print(gameBoard[i][4]);
-                System.out.print(gameBoard[i][5]);
-                System.out.print(gameBoard[i][6]);
-                System.out.println();
 
-            }
             col0--;
         } else {
-            System.out.println("Colm is full");
-            System.out.println();
+            fullCol();
         }
 
     }
@@ -238,36 +219,26 @@ public class Controller extends Shape {
         counterCol1++;
         counterForSwitchingPlayer++;
         if (counterCol1 <= 6) {
+            fullColReset();
             Circle newChip = new Circle(25);
             playGround.getChildren().add(newChip);
             if (counterForSwitchingPlayer % 2 == 1) {
                 newChip.setFill(Color.RED);
-                yourTurnText.setText ("Red, your turn");
-            } else newChip.setFill(Color.YELLOW); //change color according to player
+                yourTurnText.setText (yourTurnYellow);
+            } else {
+                newChip.setFill(Color.YELLOW);
+                yourTurnText.setText (yourTurnRed);
+            }
             GridPane.setRowIndex(newChip, col1);
             GridPane.setColumnIndex(newChip, 1);
 
             if (counterForSwitchingPlayer % 2 == 1) {
                 gameBoard[col1][1] = 'X';
             } else gameBoard[col1][1] = 'O';
-            col1--; //fix: cant be less than 0
+            col1--;
 
-
-            //will be deleted
-            for (int i = 0; i <= 5; i++) {
-                System.out.print(gameBoard[i][0]);
-                System.out.print(gameBoard[i][1]);
-                System.out.print(gameBoard[i][2]);
-                System.out.print(gameBoard[i][3]);
-                System.out.print(gameBoard[i][4]);
-                System.out.print(gameBoard[i][5]);
-                System.out.print(gameBoard[i][6]);
-                System.out.println();
-
-            }
         } else {
-            System.out.println("Colm is full");
-            System.out.println();
+            fullCol();
         }
 
     }
@@ -277,37 +248,27 @@ public class Controller extends Shape {
         counterForSwitchingPlayer++;
 
         if (counterCol2 <= 6) {
+            fullColReset();
             Circle newChip = new Circle(25);
             playGround.getChildren().add(newChip);
+
             if (counterForSwitchingPlayer % 2 == 1) {
                 newChip.setFill(Color.RED);
-            } else newChip.setFill(Color.YELLOW);
-            ; //change color according to player
+                yourTurnText.setText (yourTurnYellow);
+            } else {
+                newChip.setFill(Color.YELLOW);
+                yourTurnText.setText (yourTurnRed);
+            }
             GridPane.setRowIndex(newChip, col2);
             GridPane.setColumnIndex(newChip, 2);
 
             if (counterForSwitchingPlayer % 2 == 1) {
                 gameBoard[col2][2] = 'X';
             } else gameBoard[col2][2] = 'O';
-            col2--; //fix: cant be less than 0
+            col2--;
 
-
-            //will be deleted
-            for (int i = 0; i <= 5; i++) {
-                System.out.print(gameBoard[i][0]);
-                System.out.print(gameBoard[i][1]);
-                System.out.print(gameBoard[i][2]);
-                System.out.print(gameBoard[i][3]);
-                System.out.print(gameBoard[i][4]);
-                System.out.print(gameBoard[i][5]);
-                System.out.print(gameBoard[i][6]);
-                System.out.println();
-
-
-            }
         } else {
-            System.out.println("Colm is full");
-            System.out.println();
+            fullCol();
         }
 
     }
@@ -317,33 +278,26 @@ public class Controller extends Shape {
         counterForSwitchingPlayer++;
 
         if (counterCol3 <= 6) {
-
+            fullColReset();
             Circle newChip = new Circle(25);
             playGround.getChildren().add(newChip);
             if (counterForSwitchingPlayer % 2 == 1) {
                 newChip.setFill(Color.RED);
-            } else newChip.setFill(Color.YELLOW); //change color according to player
+                yourTurnText.setText (yourTurnYellow);
+            } else {
+                newChip.setFill(Color.YELLOW);
+                yourTurnText.setText (yourTurnRed);
+            }
             GridPane.setRowIndex(newChip, col3);
             GridPane.setColumnIndex(newChip, 3);
 
             if (counterForSwitchingPlayer % 2 == 1) {
                 gameBoard[col3][3] = 'X';
             } else gameBoard[col3][3] = 'O';
-            col3--; //fix: cant be less than 0
-            for (int i = 0; i <= 5; i++) {
-                System.out.print(gameBoard[i][0]);
-                System.out.print(gameBoard[i][1]);
-                System.out.print(gameBoard[i][2]);
-                System.out.print(gameBoard[i][3]);
-                System.out.print(gameBoard[i][4]);
-                System.out.print(gameBoard[i][5]);
-                System.out.print(gameBoard[i][6]);
-                System.out.println();
+            col3--;
 
-            }
         } else {
-            System.out.println("Colm is full");
-            System.out.println();
+            fullCol();
         }
 
     }
@@ -353,34 +307,25 @@ public class Controller extends Shape {
         counterForSwitchingPlayer++;
 
         if (counterCol4 <= 6) {
-
+            fullColReset();
             Circle newChip = new Circle(25);
             playGround.getChildren().add(newChip);
             if (counterForSwitchingPlayer % 2 == 1) {
                 newChip.setFill(Color.RED);
-            } else newChip.setFill(Color.YELLOW); //change color according to player
+                yourTurnText.setText (yourTurnYellow);
+            } else {
+                newChip.setFill(Color.YELLOW);
+                yourTurnText.setText (yourTurnRed);
+            }
             GridPane.setRowIndex(newChip, col4);
             GridPane.setColumnIndex(newChip, 4);
 
             if (counterForSwitchingPlayer % 2 == 1) {
                 gameBoard[col4][4] = 'X';
             } else gameBoard[col4][4] = 'O';
-            col4--; //fix: cant be less than 0
-            for (int i = 0; i <= 5; i++) {
-                System.out.print(gameBoard[i][0]);
-                System.out.print(gameBoard[i][1]);
-                System.out.print(gameBoard[i][2]);
-                System.out.print(gameBoard[i][3]);
-                System.out.print(gameBoard[i][4]);
-                System.out.print(gameBoard[i][5]);
-                System.out.print(gameBoard[i][6]);
-                System.out.println();
-
-
-            }
+            col4--;
         } else {
-            System.out.println("Colm is full");
-            System.out.println();
+           fullCol();
         }
 
     }
@@ -390,12 +335,16 @@ public class Controller extends Shape {
         counterForSwitchingPlayer++;
 
         if (counterCol5 <= 6) {
-
+            fullColReset();
             Circle newChip = new Circle(25);
             playGround.getChildren().add(newChip);
             if (counterForSwitchingPlayer % 2 == 1) {
                 newChip.setFill(Color.RED);
-            } else newChip.setFill(Color.YELLOW); //change color according to player
+                yourTurnText.setText (yourTurnYellow);
+            } else {
+                newChip.setFill(Color.YELLOW);
+                yourTurnText.setText (yourTurnRed);
+            }
             GridPane.setRowIndex(newChip, col5);
             GridPane.setColumnIndex(newChip, 5);
 
@@ -403,21 +352,10 @@ public class Controller extends Shape {
                 gameBoard[col5][5] = 'X';
             } else gameBoard[col5][5] = 'O';
 
-            col5--; //fix: cant be less than 0
-            for (int i = 0; i <= 5; i++) {
-                System.out.print(gameBoard[i][0]);
-                System.out.print(gameBoard[i][1]);
-                System.out.print(gameBoard[i][2]);
-                System.out.print(gameBoard[i][3]);
-                System.out.print(gameBoard[i][4]);
-                System.out.print(gameBoard[i][5]);
-                System.out.print(gameBoard[i][6]);
-                System.out.println();
+            col5--;
 
-            }
         } else {
-            System.out.println("Colm is full");
-            System.out.println();
+            fullCol();
         }
 
 
@@ -428,64 +366,63 @@ public class Controller extends Shape {
         counterForSwitchingPlayer++;
 
         if (counterCol6 <= 6) {
-
+            fullColReset();
             Circle newChip = new Circle(25);
             playGround.getChildren().add(newChip);
             if (counterForSwitchingPlayer % 2 == 1) {
                 newChip.setFill(Color.RED);
-            } else newChip.setFill(Color.YELLOW); //change color according to player
+                yourTurnText.setText (yourTurnYellow);
+            } else {
+                newChip.setFill(Color.YELLOW);
+                yourTurnText.setText (yourTurnRed);
+            }
             GridPane.setRowIndex(newChip, col6);
             GridPane.setColumnIndex(newChip, 6);
 
             if (counterForSwitchingPlayer % 2 == 1) {
                 gameBoard[col6][6] = 'X';
             } else gameBoard[col6][6] = 'O';
-            for (int i = 0; i <= 5; i++) {
-                System.out.print(gameBoard[i][0]);
-                System.out.print(gameBoard[i][1]);
-                System.out.print(gameBoard[i][2]);
-                System.out.print(gameBoard[i][3]);
-                System.out.print(gameBoard[i][4]);
-                System.out.print(gameBoard[i][5]);
-                System.out.print(gameBoard[i][6]);
-                System.out.println();
 
-            }
-
-            col6--; //fix: cant be less than 0
+            col6--;
 
         } else {
-            System.out.println("Colm is full");
-            System.out.println();
+            fullCol();
         }
     }
 
 
-
-
-
     /**
-     * ## reset: nicht fertig.##
-     * To-Do: clear like it is BUT ONLY row 0-5 of gridpane(playground)
-     *
-     * */
+     * ## reset: needs to be fixed. doesn´t work completely
+     */
+    /*
     public void reset(ActionEvent reset) {
         // Circle circle = this.newChip;
 
         playGround.getChildren().clear();
         //playGround.getChildren().removeAll(newChip);
         this.gameBoard = new char[][]{
-                {'-', '-', '-', '-', '-', '-', '-'},
-                {'-', '-', '-', '-', '-', '-', '-'},
-                {'-', '-', '-', '-', '-', '-', '-'},
-                {'-', '-', '-', '-', '-', '-', '-'},
-                {'-', '-', '-', '-', '-', '-', '-'},
-                {'-', '-', '-', '-', '-', '-', '-'},
-                {'-', '-', '-', '-', '-', '-', '-'},
+                {'a', 'b', 'c', 'd', 'e', 'f', 'g'},
+                {'h', 'i', 'j', 'k', 'l', 'm', 'n'},
+                {'o', 'p', 'q', 'r', 's', 't', 'u'},
+                {'v', 'w', 'x', 'y', 'z', 'A', 'B'},
+                {'C', 'D', 'E', 'F', 'G', 'H', 'I'},
+                {'J', 'K', 'L', 'M', 'N', 'P', 'Q'},
+                {'R', 'S', 'T', 'U', 'V', 'W', 'Y'},
         };
         System.out.println("reseted");
 
+    }*/
+
+
+    public void fullCol() {
+        fullCol.setVisible(true);
+        counterForSwitchingPlayer--;
     }
 
+    public void fullColReset() {
+        if (fullCol.isVisible()) {
+            fullCol.setVisible((false));
+        }
+    }
 
 }
