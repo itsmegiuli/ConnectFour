@@ -1,6 +1,4 @@
-package sample;
-
-import javafx.scene.paint.Paint;
+package connect4;
 
 public class Player {
 
