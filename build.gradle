@@ -7,7 +7,7 @@ plugins {
 group 'org.example'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = 16
+sourceCompatibility = 13
 
 repositories {
     mavenCentral()
@@ -23,5 +23,5 @@ javafx {
     version = '17.0.1'
 }
 
-mainClassNaame = 'main.java.at.ac.fhcampuswien.Main'
+mainClassName = 'main.java.connect4.Main'
 
