@@ -1,15 +1,19 @@
 package connect4;
 
-import javafx.event.ActionEvent;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
-import javafx.scene.shape.Shape;
+
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.geom.AffineTransform;
+import java.awt.geom.PathIterator;
+import java.awt.geom.Point2D;
+import java.awt.geom.Rectangle2D;
 
 
-public class Controller extends Shape {
+public class Controller implements Shape {
 
 
     public GridPane playGround;
@@ -35,7 +39,7 @@ public class Controller extends Shape {
         }
     }
 
-    public void col1(ActionEvent col1Event) {
+    public void col1(java.awt.event.ActionEvent col1Event) {
         if (!CheckIfWon.checkIfWon(Main.gameBoard)) {
             MakeMove.makeMoveCol1(this);
         }
@@ -49,7 +53,7 @@ public class Controller extends Shape {
         }
     }
 
-    public void col2(ActionEvent col2Event) {
+    public void col2(java.awt.event.ActionEvent col2Event) {
         if (!CheckIfWon.checkIfWon(Main.gameBoard)) {
             MakeMove.makeMoveCol2(this);
         }
@@ -63,7 +67,7 @@ public class Controller extends Shape {
         }
     }
 
-    public void col3(ActionEvent col3Event) {
+    public void col3(java.awt.event.ActionEvent col3Event) {
         if (!CheckIfWon.checkIfWon(Main.gameBoard)) {
             MakeMove.makeMoveCol3(this);
         }
@@ -77,7 +81,7 @@ public class Controller extends Shape {
         }
     }
 
-    public void col4(ActionEvent col4Event) {
+    public void col4(java.awt.event.ActionEvent col4Event) {
         if (!CheckIfWon.checkIfWon(Main.gameBoard)) {
             MakeMove.makeMoveCol4(this);
         }
@@ -91,7 +95,7 @@ public class Controller extends Shape {
         }
     }
 
-    public void col5(ActionEvent col5Event) {
+    public void col5(java.awt.event.ActionEvent col5Event) {
         if (!CheckIfWon.checkIfWon(Main.gameBoard)) {
             MakeMove.makeMoveCol5(this);
         }
@@ -105,7 +109,7 @@ public class Controller extends Shape {
         }
     }
 
-    public void col6(ActionEvent col6Event) {
+    public void col6(java.awt.event.ActionEvent col6Event) {
         if (!CheckIfWon.checkIfWon(Main.gameBoard)) {
             MakeMove.makeMoveCol6(this);
         }
@@ -134,5 +138,55 @@ public class Controller extends Shape {
 
         Reset.reset();
 
+    }
+
+    @Override
+    public Rectangle getBounds() {
+        return null;
+    }
+
+    @Override
+    public Rectangle2D getBounds2D() {
+        return null;
+    }
+
+    @Override
+    public boolean contains(double x, double y) {
+        return false;
+    }
+
+    @Override
+    public boolean contains(Point2D p) {
+        return false;
+    }
+
+    @Override
+    public boolean intersects(double x, double y, double w, double h) {
+        return false;
+    }
+
+    @Override
+    public boolean intersects(Rectangle2D r) {
+        return false;
+    }
+
+    @Override
+    public boolean contains(double x, double y, double w, double h) {
+        return false;
+    }
+
+    @Override
+    public boolean contains(Rectangle2D r) {
+        return false;
+    }
+
+    @Override
+    public PathIterator getPathIterator(AffineTransform at) {
+        return null;
+    }
+
+    @Override
+    public PathIterator getPathIterator(AffineTransform at, double flatness) {
+        return null;
     }
 }

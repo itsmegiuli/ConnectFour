@@ -80,7 +80,7 @@
             </GridPane>
             <ImageView fitHeight="358.0" fitWidth="415.0" preserveRatio="true" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647">
                <image>
-                  <Image url="@../graphics/background.png" />
+                  <Image url="@../../../graphics/background.png" />
                </image>
             </ImageView>
          </children>
