@@ -80,7 +80,7 @@
             </GridPane>
             <ImageView fitHeight="358.0" fitWidth="415.0" preserveRatio="true" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647">
                <image>
-                  <Image url="@../../../graphics/background.png" />
+                  <Image url="background.png" />
                </image>
             </ImageView>
          </children>
@@ -114,7 +114,7 @@
                   <Font size="36.0" />
                </font>
             </Label>
-            <Label fx:id="yourTurnText1" alignment="CENTER" prefHeight="128.0" prefWidth="344.0" text="How to play: Click the button of the column you want to put your chip in! To win: place 4 chips of your colour in a row (either horizontally, vertically or diagonally)." wrapText="true" GridPane.rowIndex="2">
+            <Label fx:id="yourTurnText1" alignment="CENTER" prefHeight="128.0" prefWidth="344.0" text="How to play:  Click the button of the column you want to put your chip in! To win: place 4 chips of your colour in a row (either horizontally, vertically or diagonally)." wrapText="true" GridPane.rowIndex="2">
                <font>
                   <Font size="14.0" />
                </font>

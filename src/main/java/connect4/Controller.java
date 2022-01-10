@@ -1,5 +1,6 @@
 package connect4;
 
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.GridPane;
@@ -17,15 +18,15 @@ public class Controller implements Shape {
 
 
     public GridPane playGround;
-    public Button reset;
     public RowConstraints rowForReset0, rowForReset1, rowForReset2, rowForReset3, rowForReset4, rowForReset5;
     public Label yourTurnText;
     public Label whoWonText;
     public Label fullCol;
     public ToggleButton row0Button, row1Button, row2Button, row3Button, row4Button, row5Button, row6Button;
+    public Button reset;
 
 
-    public void col0(ActionEvent col0Event) { //method on click of Buttons (1-7)
+    public void col0(javafx.event.ActionEvent col0Event) { //method on click of Buttons (1-7)
         if (!CheckIfWon.checkIfWon(Main.gameBoard)) {
             MakeMove.makeMoveCol0(this);
         }
@@ -39,7 +40,7 @@ public class Controller implements Shape {
         }
     }
 
-    public void col1(java.awt.event.ActionEvent col1Event) {
+    public void col1(javafx.event.ActionEvent col1Event) {
         if (!CheckIfWon.checkIfWon(Main.gameBoard)) {
             MakeMove.makeMoveCol1(this);
         }
@@ -53,7 +54,7 @@ public class Controller implements Shape {
         }
     }
 
-    public void col2(java.awt.event.ActionEvent col2Event) {
+    public void col2(javafx.event.ActionEvent col2Event) {
         if (!CheckIfWon.checkIfWon(Main.gameBoard)) {
             MakeMove.makeMoveCol2(this);
         }
@@ -67,7 +68,7 @@ public class Controller implements Shape {
         }
     }
 
-    public void col3(java.awt.event.ActionEvent col3Event) {
+    public void col3(javafx.event.ActionEvent  col3Event) {
         if (!CheckIfWon.checkIfWon(Main.gameBoard)) {
             MakeMove.makeMoveCol3(this);
         }
@@ -81,7 +82,7 @@ public class Controller implements Shape {
         }
     }
 
-    public void col4(java.awt.event.ActionEvent col4Event) {
+    public void col4(javafx.event.ActionEvent  col4Event) {
         if (!CheckIfWon.checkIfWon(Main.gameBoard)) {
             MakeMove.makeMoveCol4(this);
         }
@@ -95,7 +96,7 @@ public class Controller implements Shape {
         }
     }
 
-    public void col5(java.awt.event.ActionEvent col5Event) {
+    public void col5(javafx.event.ActionEvent  col5Event) {
         if (!CheckIfWon.checkIfWon(Main.gameBoard)) {
             MakeMove.makeMoveCol5(this);
         }
@@ -109,7 +110,7 @@ public class Controller implements Shape {
         }
     }
 
-    public void col6(java.awt.event.ActionEvent col6Event) {
+    public void col6(javafx.event.ActionEvent col6Event) {
         if (!CheckIfWon.checkIfWon(Main.gameBoard)) {
             MakeMove.makeMoveCol6(this);
         }
@@ -123,7 +124,7 @@ public class Controller implements Shape {
         }
     }
 
-    public void resetButton(ActionEvent reset) {
+    public void resetButton(javafx.event.ActionEvent reset) {
 
         playGround.getChildren().clear();
         playGround.getChildren().add(row0Button);
@@ -189,4 +190,7 @@ public class Controller implements Shape {
     public PathIterator getPathIterator(AffineTransform at, double flatness) {
         return null;
     }
+
+
+
 }

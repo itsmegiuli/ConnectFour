@@ -22,7 +22,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("graphicInterface.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/graphicInterface.fxml"));
         primaryStage.setTitle("Connect Four ... by Puzzled");
         primaryStage.setScene(new Scene(root, 800, 500));
         primaryStage.show();
