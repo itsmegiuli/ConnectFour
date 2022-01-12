@@ -1,27 +1,16 @@
 plugins {
-    id 'java'
     id 'application'
     id 'org.openjfx.javafxplugin' version '0.0.10'
 }
 
-group 'org.example'
-version '1.0-SNAPSHOT'
-
-sourceCompatibility = 13
-
 repositories {
     mavenCentral()
 }
-application {
-    mainClassName("connect4.Main")
-}
-
 
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
 }
-apply plugin: "org.openjfx.javafxplugin"
 
 javafx {
     modules = [ 'javafx.controls', 'javafx.fxml']
