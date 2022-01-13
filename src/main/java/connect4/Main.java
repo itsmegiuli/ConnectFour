@@ -20,6 +20,8 @@ public class Main extends Application {
             {'R', 'S', 'T', 'U', 'V', 'W', 'Y'},
     };
 
+    // gameBoard is a 2d char array with 42 different characters.
+
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/graphicInterface.fxml"));
