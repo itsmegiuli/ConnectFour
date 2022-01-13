@@ -1,8 +1,8 @@
 package connect4;
 
 /** CheckIfWon checks if there are any 4-combinations in our 2D Array, that have the same char (==).
- * The "original" char array has 42 different characters, only changes when players make moves.
- * If 4 places next to each other are equals ,... then it means whoever´s turn it was WON!
+ * The "original" char array has 42 different characters, it only changes when the players make their move.
+ * If 4 places next to each other are equal,... then that means whoever´s turn it was, WON!
  */
 
 public class CheckIfWon {
@@ -11,7 +11,7 @@ public class CheckIfWon {
 
         for (int j = 0; j < gameBoard.length; j++) {
             // **HORIZONTALLY**
-            //checks all rows combinations, to see if there's any that has 4 of the same symbols (X or O) next to each other
+            //checks all row-combinations, to see if there are 4 of the same symbol (X or O) next to each other
             if (gameBoard[j][0] == gameBoard[j][1] && gameBoard[j][1] == gameBoard[j][2] && gameBoard[j][2] == gameBoard[j][3] ||
                     gameBoard[j][1] == gameBoard[j][2] && gameBoard[j][2] == gameBoard[j][3] && gameBoard[j][3] == gameBoard[j][4] ||
                     gameBoard[j][2] == gameBoard[j][3] && gameBoard[j][3] == gameBoard[j][4] && gameBoard[j][4] == gameBoard[j][5] ||
@@ -20,7 +20,7 @@ public class CheckIfWon {
             }
 
             // **VERTICALLY**
-            //checks all columns combinations, to see if there's any that has 4 of the same symbols (X or O) next to each other
+            //checks all column-combinations, to see if there are 4 of the same symbol (X or O) next to each other
             if (gameBoard[0][j] == gameBoard[1][j] && gameBoard[1][j] == gameBoard[2][j] && gameBoard[2][j] == gameBoard[3][j] ||
                     gameBoard[1][j] == gameBoard[2][j] && gameBoard[2][j] == gameBoard[3][j] && gameBoard[3][j] == gameBoard[4][j] ||
                     gameBoard[2][j] == gameBoard[3][j] && gameBoard[3][j] == gameBoard[4][j] && gameBoard[4][j] == gameBoard[5][j]) {
@@ -30,6 +30,7 @@ public class CheckIfWon {
 
 
         // **DIAGONALLY**
+        //checks all diagonal combinations, to see if there are 4 of the same symbol (X or O) diagonally across from each other
         for (int row = 0; row < gameBoard.length - 3; row++) {
             for (int col = 0; col < gameBoard[row].length - 3; col++) {
                 int element = gameBoard[row][col];
@@ -41,7 +42,7 @@ public class CheckIfWon {
             }
         }
 
-        // **DIAGONALLY**
+        // **DIAGONALLY** //see above
         for (int row = 0; row < gameBoard.length - 3; row++) {
             for (int col = 3; col < gameBoard[row].length; col++) {
                 int element = gameBoard[row][col];

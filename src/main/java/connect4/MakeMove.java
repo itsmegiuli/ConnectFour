@@ -18,16 +18,16 @@ public class MakeMove {
     public static void makeMoveCol0(Controller controller) {
 
         counterCol0++;
-        counterForSwitchingPlayer++;
+        counterForSwitchingPlayer++;       // counts one move, so the Game knows it´s the other Players turn
         if (counterCol0 <= 6) {
             Reset.fullColReset(controller.fullCol);
             Circle newChip = new Circle(25);
             controller.playGround.getChildren().add(newChip);
             if (counterForSwitchingPlayer % 2 == 1) {
-                newChip.setFill(Color.RED);
+                newChip.setFill(Color.RED);         // after Red made its move: Your turn, Yellow
                 controller.yourTurnText.setText(yourTurnYellow);
             } else {
-                newChip.setFill(Color.YELLOW);
+                newChip.setFill(Color.YELLOW);        // after Yellow made its move: Your turn, Red
                 controller.yourTurnText.setText(yourTurnRed);
             }
             GridPane.setRowIndex(newChip, col0);
@@ -36,14 +36,14 @@ public class MakeMove {
                 Main.gameBoard[col0][0] = 'X';
             } else Main.gameBoard[col0][0] = 'O';
 
-            col0--;
+            col0--;  // column counter starts at 5 (at the bottom) -> subtracting counts to know the place of the chip
         } else {
             Reset.fullCol(controller.fullCol);
         }
 
     }
 
-    public static void makeMoveCol1(Controller controller) {
+    public static void makeMoveCol1(Controller controller) { //method: see makeMoveCol0 (makeMoveCol2, etc.)
         counterCol1++;
         counterForSwitchingPlayer++;
         if (counterCol1 <= 6) {
@@ -214,7 +214,7 @@ public class MakeMove {
             col6--;
 
         } else {
-            Reset.fullCol(controller.fullCol);
+            Reset.fullCol(controller.fullCol); //see class Reset
         }
     }
 }

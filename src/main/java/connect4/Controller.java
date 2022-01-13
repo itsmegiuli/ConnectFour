@@ -7,7 +7,6 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
 
 import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.awt.geom.AffineTransform;
 import java.awt.geom.PathIterator;
 import java.awt.geom.Point2D;
@@ -26,21 +25,21 @@ public class Controller implements Shape {
     public Button reset;
 
 
-    public void col0(javafx.event.ActionEvent col0Event) { //method on click of Buttons (1-7)
-        if (!CheckIfWon.checkIfWon(Main.gameBoard)) {
+    public void col0(javafx.event.ActionEvent col0Event) {    //method on click of Buttons (1-7)
+        if (!CheckIfWon.checkIfWon(Main.gameBoard)) {        // if nobody wins, you keep playing the game
             MakeMove.makeMoveCol0(this);
         }
-        if (CheckIfWon.checkIfWon(Main.gameBoard)) {
+        if (CheckIfWon.checkIfWon(Main.gameBoard)) {        // method being called when somebody wins the game
             yourTurnText.setText("");
-            if (MakeMove.counterForSwitchingPlayer % 2 == 1) {
+            if (MakeMove.counterForSwitchingPlayer % 2 == 1) {  //second turn = Red Player wins
                 whoWonText.setText("Red, you won!");
-            } else {
+            } else {                                           //first turn = Yellow Player wins
                 whoWonText.setText("Yellow, you won!");
             }
         }
     }
 
-    public void col1(javafx.event.ActionEvent col1Event) {
+    public void col1(javafx.event.ActionEvent col1Event) {     // method: see col0 (col2, col3, etc.)
         if (!CheckIfWon.checkIfWon(Main.gameBoard)) {
             MakeMove.makeMoveCol1(this);
         }
