@@ -26,53 +26,53 @@
          </rowConstraints>
          <children>
             <GridPane fx:id="playGround" hgap="7.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="338.0" prefWidth="395.0" vgap="7.5">
-              <columnConstraints>
+               <columnConstraints>
                   <ColumnConstraints fx:id="r0" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="50.0" />
                   <ColumnConstraints fx:id="r1" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="50.0" />
                   <ColumnConstraints fx:id="r2" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="50.0" />
                   <ColumnConstraints fx:id="r3" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="50.0" />
                   <ColumnConstraints fx:id="r4" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="50.0" />
-                <ColumnConstraints fx:id="r5" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="50.0" />
-                <ColumnConstraints fx:id="r6" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="50.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints fx:id="rowForReset0" maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
-                <RowConstraints fx:id="rowForReset1" maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                  <ColumnConstraints fx:id="r5" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="50.0" />
+                  <ColumnConstraints fx:id="r6" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="50.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints fx:id="rowForReset0" maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                  <RowConstraints fx:id="rowForReset1" maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
                   <RowConstraints fx:id="rowForReset2" maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
                   <RowConstraints fx:id="rowForReset3" maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
                   <RowConstraints fx:id="rowForReset4" maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
-                <RowConstraints fx:id="rowForReset5" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="50.0" vgrow="SOMETIMES" />
+                  <RowConstraints fx:id="rowForReset5" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="50.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="50.0" vgrow="SOMETIMES" />
-              </rowConstraints>
+               </rowConstraints>
                <GridPane.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </GridPane.margin>
                <children>
-                  <ToggleButton fx:id="row0Button" mnemonicParsing="false" onAction="#col0" text="   ↑   " GridPane.rowIndex="6">
+                  <ToggleButton fx:id="row0Button" mnemonicParsing="false" onAction="#col0" text="   ↓   ">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font></ToggleButton>
-                  <ToggleButton fx:id="row1Button" mnemonicParsing="false" onAction="#col1" text="   ↑   " GridPane.columnIndex="1" GridPane.rowIndex="6">
+                  <ToggleButton fx:id="row1Button" mnemonicParsing="false" onAction="#col1" text="   ↓   " GridPane.columnIndex="1">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font></ToggleButton>
-                  <ToggleButton fx:id="row4Button" mnemonicParsing="false" onAction="#col4" text="   ↑   " GridPane.columnIndex="4" GridPane.rowIndex="6">
+                  <ToggleButton fx:id="row4Button" mnemonicParsing="false" onAction="#col4" text="   ↓   " GridPane.columnIndex="4">
                      <font>
                         <Font size="14.0" />
                      </font></ToggleButton>
-                  <ToggleButton fx:id="row6Button" mnemonicParsing="false" onAction="#col6" text="   ↑   " GridPane.columnIndex="6" GridPane.rowIndex="6">
+                  <ToggleButton fx:id="row6Button" mnemonicParsing="false" onAction="#col6" text="   ↓   " GridPane.columnIndex="6">
                      <font>
                         <Font size="14.0" />
                      </font></ToggleButton>
-                  <ToggleButton fx:id="row5Button" mnemonicParsing="false" onAction="#col5" text="   ↑   " GridPane.columnIndex="5" GridPane.rowIndex="6">
+                  <ToggleButton fx:id="row5Button" mnemonicParsing="false" onAction="#col5" text="   ↓   " GridPane.columnIndex="5">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font></ToggleButton>
-                  <ToggleButton fx:id="row3Button" mnemonicParsing="false" onAction="#col3" text="   ↑   " GridPane.columnIndex="3" GridPane.rowIndex="6">
+                  <ToggleButton fx:id="row3Button" mnemonicParsing="false" onAction="#col3" text="   ↓   " GridPane.columnIndex="3">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font></ToggleButton>
-                  <ToggleButton fx:id="row2Button" mnemonicParsing="false" onAction="#col2" text="   ↑   " GridPane.columnIndex="2" GridPane.rowIndex="6">
+                  <ToggleButton fx:id="row2Button" mnemonicParsing="false" onAction="#col2" text="   ↓   " GridPane.columnIndex="2">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font></ToggleButton>
@@ -80,8 +80,11 @@
             </GridPane>
             <ImageView fitHeight="358.0" fitWidth="415.0" preserveRatio="true" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647">
                <image>
-                  <Image url="background.png" />
+                  <Image url="@../resources/background.png" />
                </image>
+               <GridPane.margin>
+                  <Insets top="115.0" />
+               </GridPane.margin>
             </ImageView>
          </children>
       </GridPane>
@@ -114,7 +117,7 @@
                   <Font size="36.0" />
                </font>
             </Label>
-            <Label fx:id="yourTurnText1" alignment="CENTER" prefHeight="128.0" prefWidth="344.0" text="How to play:  Click the button of the column you want to put your chip in! To win: place 4 chips of your colour in a row (either horizontally, vertically or diagonally)." wrapText="true" GridPane.rowIndex="2">
+            <Label alignment="CENTER" prefHeight="128.0" prefWidth="344.0" text="How to play: Click the button of the column you want to put your chip in! To win: place 4 chips of your colour in a row (either horizontally, vertically or diagonally)." wrapText="true" GridPane.rowIndex="2">
                <font>
                   <Font size="14.0" />
                </font>
