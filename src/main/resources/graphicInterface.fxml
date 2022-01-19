@@ -48,31 +48,31 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </GridPane.margin>
                <children>
-                  <ToggleButton fx:id="row0Button" mnemonicParsing="false" onAction="#col0" text="   ↓   ">
+                  <ToggleButton fx:id="row0Button" mnemonicParsing="false" onAction="#col0" text="   ↑   " GridPane.rowIndex="6">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font></ToggleButton>
-                  <ToggleButton fx:id="row1Button" mnemonicParsing="false" onAction="#col1" text="   ↓   " GridPane.columnIndex="1">
+                  <ToggleButton fx:id="row1Button" mnemonicParsing="false" onAction="#col1" text="   ↑   " GridPane.columnIndex="1" GridPane.rowIndex="6">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font></ToggleButton>
-                  <ToggleButton fx:id="row4Button" mnemonicParsing="false" onAction="#col4" text="   ↓   " GridPane.columnIndex="4">
+                  <ToggleButton fx:id="row4Button" mnemonicParsing="false" onAction="#col4" text="   ↑   " GridPane.columnIndex="4" GridPane.rowIndex="6">
                      <font>
                         <Font size="14.0" />
                      </font></ToggleButton>
-                  <ToggleButton fx:id="row6Button" mnemonicParsing="false" onAction="#col6" text="   ↓   " GridPane.columnIndex="6">
+                  <ToggleButton fx:id="row6Button" mnemonicParsing="false" onAction="#col6" text="   ↑   " GridPane.columnIndex="6" GridPane.rowIndex="6">
                      <font>
                         <Font size="14.0" />
                      </font></ToggleButton>
-                  <ToggleButton fx:id="row5Button" mnemonicParsing="false" onAction="#col5" text="   ↓   " GridPane.columnIndex="5">
+                  <ToggleButton fx:id="row5Button" mnemonicParsing="false" onAction="#col5" text="   ↑   " GridPane.columnIndex="5" GridPane.rowIndex="6">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font></ToggleButton>
-                  <ToggleButton fx:id="row3Button" mnemonicParsing="false" onAction="#col3" text="   ↓   " GridPane.columnIndex="3">
+                  <ToggleButton fx:id="row3Button" mnemonicParsing="false" onAction="#col3" text="   ↑   " GridPane.columnIndex="3" GridPane.rowIndex="6">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font></ToggleButton>
-                  <ToggleButton fx:id="row2Button" mnemonicParsing="false" onAction="#col2" text="   ↓   " GridPane.columnIndex="2">
+                  <ToggleButton fx:id="row2Button" mnemonicParsing="false" onAction="#col2" text="   ↑   " GridPane.columnIndex="2" GridPane.rowIndex="6">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font></ToggleButton>
@@ -80,11 +80,8 @@
             </GridPane>
             <ImageView fitHeight="358.0" fitWidth="415.0" preserveRatio="true" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647">
                <image>
-                  <Image url="@../resources/background.png" />
+                  <Image url="@background.png" />
                </image>
-               <GridPane.margin>
-                  <Insets top="115.0" />
-               </GridPane.margin>
             </ImageView>
          </children>
       </GridPane>
