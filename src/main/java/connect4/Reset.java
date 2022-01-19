@@ -23,6 +23,8 @@ public class Reset {
         MakeMove.col6 = 5;
 
 
+
+
         // we need the same gameBoard as the one from the beginning, X´s and O´s need to be removed again from the previous game
         Main.gameBoard = new char[][]{
                 {'a', 'b', 'c', 'd', 'e', 'f', 'g'},
