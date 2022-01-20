@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
@@ -47,40 +48,110 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </GridPane.margin>
                      <children>
-                        <ToggleButton fx:id="row0Button" mnemonicParsing="false" onAction="#col0" text="   ↓   ">
+                        <ToggleButton fx:id="row0Button" mnemonicParsing="false" onAction="#col0" text="  ⬇  " textFill="#0816da">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <DropShadow blurType="ONE_PASS_BOX">
+                                 <color>
+                                    <Color red="0.20000000298023224" green="0.13333334028720856" blue="0.8039215803146362" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
                         </ToggleButton>
-                        <ToggleButton fx:id="row1Button" mnemonicParsing="false" onAction="#col1" text="   ↓   " GridPane.columnIndex="1">
+                        <ToggleButton fx:id="row1Button" mnemonicParsing="false" onAction="#col1" text="  ⬇  " textFill="#0816da" GridPane.columnIndex="1">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <DropShadow blurType="ONE_PASS_BOX">
+                                 <color>
+                                    <Color red="0.20000000298023224" green="0.13333334028720856" blue="0.8039215803146362" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
                         </ToggleButton>
-                        <ToggleButton fx:id="row4Button" mnemonicParsing="false" onAction="#col4" text="   ↓   " GridPane.columnIndex="4">
+                        <ToggleButton fx:id="row4Button" mnemonicParsing="false" onAction="#col4" text="  ⬇  " textFill="#0816da" GridPane.columnIndex="4">
                            <font>
                               <Font size="14.0" />
                            </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <DropShadow blurType="ONE_PASS_BOX">
+                                 <color>
+                                    <Color red="0.20000000298023224" green="0.13333334028720856" blue="0.8039215803146362" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
                         </ToggleButton>
-                        <ToggleButton fx:id="row6Button" mnemonicParsing="false" onAction="#col6" text="   ↓   " GridPane.columnIndex="6">
+                        <ToggleButton fx:id="row6Button" mnemonicParsing="false" onAction="#col6" text="  ⬇  " textFill="#0816da" GridPane.columnIndex="6">
                            <font>
                               <Font size="14.0" />
                            </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <DropShadow blurType="ONE_PASS_BOX">
+                                 <color>
+                                    <Color red="0.20000000298023224" green="0.13333334028720856" blue="0.8039215803146362" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
                         </ToggleButton>
-                        <ToggleButton fx:id="row5Button" mnemonicParsing="false" onAction="#col5" text="   ↓   " GridPane.columnIndex="5">
+                        <ToggleButton fx:id="row5Button" mnemonicParsing="false" onAction="#col5" text="  ⬇  " textFill="#0816da" GridPane.columnIndex="5">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <DropShadow>
+                                 <color>
+                                    <Color red="0.20000000298023224" green="0.13333334028720856" blue="0.8039215803146362" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
                         </ToggleButton>
-                        <ToggleButton fx:id="row3Button" mnemonicParsing="false" onAction="#col3" text="   ↓   " GridPane.columnIndex="3">
+                        <ToggleButton fx:id="row3Button" mnemonicParsing="false" onAction="#col3" text="  ⬇  " textFill="#0816da" GridPane.columnIndex="3">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <DropShadow blurType="ONE_PASS_BOX">
+                                 <color>
+                                    <Color red="0.20000000298023224" green="0.13333334028720856" blue="0.8039215803146362" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
                         </ToggleButton>
-                        <ToggleButton fx:id="row2Button" mnemonicParsing="false" onAction="#col2" text="   ↓   " GridPane.columnIndex="2">
+                        <ToggleButton fx:id="row2Button" mnemonicParsing="false" onAction="#col2" text="  ⬇  " textFill="#0816da" GridPane.columnIndex="2">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <DropShadow blurType="ONE_PASS_BOX">
+                                 <color>
+                                    <Color red="0.20000000298023224" green="0.13333334028720856" blue="0.8039215803146362" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
                         </ToggleButton>
                      </children>
                   </GridPane>
@@ -92,7 +163,7 @@
                         <Insets top="120.0" />
                      </GridPane.margin>
                      <effect>
-                        <DropShadow spread="0.42">
+                        <DropShadow spread="0.25">
                            <color>
                               <Color red="0.34046053886413574" green="0.2774122953414917" blue="0.9078947305679321" opacity="0.6200000047683716" />
                            </color>
@@ -115,26 +186,10 @@
                   <RowConstraints maxHeight="185.60001220703128" minHeight="10.0" prefHeight="69.80002441406248" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Label fx:id="yourTurnText" alignment="CENTER" mouseTransparent="true" prefHeight="128.0" prefWidth="344.0" text="Yellow, start the game!">
+                  <Label fx:id="yourTurnText" alignment="CENTER" ellipsisString=" " mouseTransparent="true" prefHeight="128.0" prefWidth="344.0" text="Yellow, start the game!" textFill="#7300ff" textOverrun="CLIP">
                      <font>
                         <Font size="18.0" />
                      </font>
-                     <textFill>
-                        <LinearGradient cycleMethod="REFLECT" endY="1.0" startY="0.5380952380952381">
-                           <stops>
-                              <Stop>
-                                 <color>
-                                    <Color />
-                                 </color>
-                              </Stop>
-                              <Stop offset="1.0">
-                                 <color>
-                                    <Color red="1.0" green="1.0" blue="1.0" />
-                                 </color>
-                              </Stop>
-                           </stops>
-                        </LinearGradient>
-                     </textFill>
                   </Label>
                   <Button fx:id="reset" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#resetButton" text="Reset / Play Again" textAlignment="CENTER" visible="true" GridPane.rowIndex="3">
                      <opaqueInsets>
