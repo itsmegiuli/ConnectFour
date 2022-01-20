@@ -2,8 +2,10 @@
 
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
 <Pane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="connect4.Controller">
@@ -89,6 +91,13 @@
                      <GridPane.margin>
                         <Insets top="120.0" />
                      </GridPane.margin>
+                     <effect>
+                        <DropShadow spread="0.42">
+                           <color>
+                              <Color red="0.34046053886413574" green="0.2774122953414917" blue="0.9078947305679321" opacity="0.6200000047683716" />
+                           </color>
+                        </DropShadow>
+                     </effect>
                   </ImageView>
                </children>
                <opaqueInsets>
@@ -106,10 +115,26 @@
                   <RowConstraints maxHeight="185.60001220703128" minHeight="10.0" prefHeight="69.80002441406248" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Label fx:id="yourTurnText" alignment="CENTER" prefHeight="128.0" prefWidth="344.0" text="Yellow, start the game!">
+                  <Label fx:id="yourTurnText" alignment="CENTER" mouseTransparent="true" prefHeight="128.0" prefWidth="344.0" text="Yellow, start the game!">
                      <font>
                         <Font size="18.0" />
                      </font>
+                     <textFill>
+                        <LinearGradient cycleMethod="REFLECT" endY="1.0" startY="0.5380952380952381">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
                   </Label>
                   <Button fx:id="reset" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#resetButton" text="Reset / Play Again" textAlignment="CENTER" visible="true" GridPane.rowIndex="3">
                      <opaqueInsets>
