@@ -23,8 +23,6 @@ public class Reset {
         MakeMove.col6 = 6;
 
 
-
-
         // we need the same gameBoard as the one from the beginning, X´s and O´s need to be removed again from the previous game
         Main.gameBoard = new char[][]{
                 {'a', 'b', 'c', 'd', 'e', 'f', 'g'},
@@ -36,21 +34,34 @@ public class Reset {
                 {'R', 'S', 'T', 'U', 'V', 'W', 'Y'},
         };
 
+
     }
+
 
 
     //If a player wants to place a "chip" in a column that is already full, a message will appear to inform the player.
     //so that the "move" doesn't mean the player lost a turn: counterForSwitchingPlayer needs to be reduced by 1.
     public static void fullCol(Label fullCol) {
-        fullCol.setVisible(true); // text = "That column is full! Try another one."
-        MakeMove.counterForSwitchingPlayer--;
-    }
+
+            fullCol.setVisible( true );
+            MakeMove.counterForSwitchingPlayer--;
+        }
+
 
     //the message will disappear as soon as the player chooses a "not-full" column
     //fullCol is setVisible(false) by default
     public static void fullColReset(Label fullCol) {
-        if (fullCol.isVisible()) {
-            fullCol.setVisible((false));
+        if ( fullCol.isVisible() ) {
+            fullCol.setVisible( (false) );
         }
+
     }
+
+    public static void DrawReset(Label Draw) {
+        if ( Draw.isVisible() ) {
+            Draw.setVisible( (false) );
+        }
+
+    }
+
 }
