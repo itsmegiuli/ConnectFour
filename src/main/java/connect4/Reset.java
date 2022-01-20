@@ -14,13 +14,13 @@ public class Reset {
         MakeMove.counterCol4 = 0;
         MakeMove.counterCol5 = 0;
         MakeMove.counterCol6 = 0;
-        MakeMove.col0 = 5; //col0-6 needs to go downwards from 5 again
-        MakeMove.col1 = 5;
-        MakeMove.col2 = 5;
-        MakeMove.col3 = 5;
-        MakeMove.col4 = 5;
-        MakeMove.col5 = 5;
-        MakeMove.col6 = 5;
+        MakeMove.col0 = 6; //col0-6 needs to go downwards from 5 again
+        MakeMove.col1 = 6;
+        MakeMove.col2 = 6;
+        MakeMove.col3 = 6;
+        MakeMove.col4 = 6;
+        MakeMove.col5 = 6;
+        MakeMove.col6 = 6;
 
 
 

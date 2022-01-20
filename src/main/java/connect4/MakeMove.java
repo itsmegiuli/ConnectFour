@@ -10,7 +10,7 @@ public class MakeMove {
 
     public static int counterForSwitchingPlayer = 1;
     public static int counterCol0 = 0, counterCol1 = 0, counterCol2 = 0, counterCol3 = 0, counterCol4 = 0, counterCol5 = 0, counterCol6 = 0;
-    public static int col0 = 5, col1 = 5, col2 = 5, col3 = 5, col4 = 5, col5 = 5, col6 = 5;
+    public static int col0 = 6, col1 = 6, col2 = 6, col3 = 6, col4 = 6, col5 = 6, col6 = 6;
     static String yourTurnYellow = "Yellow, make your move!";
     static String yourTurnRed = "Red, make your move!";
 
@@ -21,7 +21,7 @@ public class MakeMove {
         counterForSwitchingPlayer++;       // counts one move, so the Game knows it´s the other Players turn
         if (counterCol0 <= 6) {
             Reset.fullColReset(controller.fullCol);
-            Circle newChip = new Circle(25);
+            Circle newChip = new Circle(26);
             controller.playGround.getChildren().add(newChip);
             if (counterForSwitchingPlayer % 2 == 1) {
                 newChip.setFill(Color.RED);         // after Red made its move: Your turn, Yellow
@@ -48,7 +48,7 @@ public class MakeMove {
         counterForSwitchingPlayer++;
         if (counterCol1 <= 6) {
             Reset.fullColReset(controller.fullCol);
-            Circle newChip = new Circle(25);
+            Circle newChip = new Circle(26);
             controller.playGround.getChildren().add(newChip);
             if (counterForSwitchingPlayer % 2 == 1) {
                 newChip.setFill(Color.RED);
@@ -77,7 +77,7 @@ public class MakeMove {
 
         if (counterCol2 <= 6) {
             Reset.fullColReset(controller.fullCol);
-            Circle newChip = new Circle(25);
+            Circle newChip = new Circle(26);
             controller.playGround.getChildren().add(newChip);
 
             if (counterForSwitchingPlayer % 2 == 1) {
@@ -107,7 +107,7 @@ public class MakeMove {
 
         if (counterCol3 <= 6) {
             Reset.fullColReset(controller.fullCol);
-            Circle newChip = new Circle(25);
+            Circle newChip = new Circle(26);
             controller.playGround.getChildren().add(newChip);
             if (counterForSwitchingPlayer % 2 == 1) {
                 newChip.setFill(Color.RED);
@@ -136,7 +136,7 @@ public class MakeMove {
 
         if (counterCol4 <= 6) {
             Reset.fullColReset(controller.fullCol);
-            Circle newChip = new Circle(25);
+            Circle newChip = new Circle(26);
             controller.playGround.getChildren().add(newChip);
             if (counterForSwitchingPlayer % 2 == 1) {
                 newChip.setFill(Color.RED);
@@ -164,7 +164,7 @@ public class MakeMove {
 
         if (counterCol5 <= 6) {
             Reset.fullColReset(controller.fullCol);
-            Circle newChip = new Circle(25);
+            Circle newChip = new Circle(26);
             controller.playGround.getChildren().add(newChip);
             if (counterForSwitchingPlayer % 2 == 1) {
                 newChip.setFill(Color.RED);
@@ -195,7 +195,7 @@ public class MakeMove {
 
         if (counterCol6 <= 6) {
             Reset.fullColReset(controller.fullCol);
-            Circle newChip = new Circle(25);
+            Circle newChip = new Circle(26);
             controller.playGround.getChildren().add(newChip);
             if (counterForSwitchingPlayer % 2 == 1) {
                 newChip.setFill(Color.RED);
