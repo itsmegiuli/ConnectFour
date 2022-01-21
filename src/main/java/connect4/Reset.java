@@ -50,7 +50,7 @@ public class Reset {
         }
     }
 
-    protected static void drawReset(Label draw) {
+    protected static void drawReset(Label draw) {  //resets the game after a draw
         if (draw.isVisible()) {
             draw.setVisible((false));
         }

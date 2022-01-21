@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 public class Main extends Application {
 
 
-    protected static char[][] gameBoard = new char[][]{
+    protected static char[][] gameBoard = new char[][]{   // gameBoard is a 2D char array with 42 different characters.
             {'a', 'b', 'c', 'd', 'e', 'f', 'g'},
             {'h', 'i', 'j', 'k', 'l', 'm', 'n'},
             {'o', 'p', 'q', 'r', 's', 't', 'u'},
@@ -20,8 +20,6 @@ public class Main extends Application {
             {'R', 'S', 'T', 'U', 'V', 'W', 'Y'},
     };
 
-    // gameBoard is a 2D char array with 42 different characters.
-
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/graphicInterface.fxml"));
@@ -30,10 +28,8 @@ public class Main extends Application {
         primaryStage.show();
     }
 
-
     public static void main(String[] args) {
 
         launch(args);
-
     }
 }

@@ -11,7 +11,7 @@ public class WhoWonTransition {
 
     protected static void yellowWins(Controller controller) {
 
-        controller.yourTurnText.setText("Yellow, you won!"); // giuli´s note to self: your turn text instead of who won - delete who won
+        controller.yourTurnText.setText("Yellow, you won!"); // sets the animation when yellow wins
 
 
         controller.instructions.setVisible(false);
@@ -57,11 +57,11 @@ public class WhoWonTransition {
         upAndDown.play();
     }
 
-    protected static void redWins(Controller controller) {
+    protected static void redWins(Controller controller) {   // sets the animation when red wins
 
         controller.instructions.setVisible(false);
         controller.redBeanie.setVisible(true);
-        controller.yourTurnText.setText("Red, you won!"); // giuli´s note to self: your turn text instead of who won - delete who won
+        controller.yourTurnText.setText("Red, you won!");
 
         TranslateTransition leftToRight = new TranslateTransition();
         leftToRight.setNode(controller.redBeanie);
