@@ -1,17 +1,11 @@
 package connect4;
 
-import javafx.animation.Interpolator;
-import javafx.animation.RotateTransition;
-import javafx.animation.ScaleTransition;
-import javafx.animation.TranslateTransition;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
-import javafx.scene.transform.Rotate;
-import javafx.util.Duration;
 
 import java.awt.*;
 import java.awt.geom.AffineTransform;
@@ -28,7 +22,7 @@ public class Controller implements Shape {
     public Label yourTurnText;
     public Label whoWonText;
     public Label fullCol;
-    public Label Draw;
+    public Label draw;
     public ToggleButton row0Button, row1Button, row2Button, row3Button, row4Button, row5Button, row6Button;
     public Button reset;
     public ImageView redWonImage;
@@ -36,103 +30,9 @@ public class Controller implements Shape {
     public ImageView yellowBeanie;
     public Label instructions;
 
-    public void yellowWins() {
-
-        yourTurnText.setText("Yellow, you won!"); // giuli´s note to self: your turn text instead of who won - delete who won
-
-
-        instructions.setVisible(false);
-        yellowBeanie.setVisible(true);
-
-        TranslateTransition leftToRight = new TranslateTransition();
-        leftToRight.setNode(yellowBeanie);
-        leftToRight.setDuration(Duration.millis(1000));
-        leftToRight.setCycleCount(2);
-        leftToRight.setAutoReverse(true);
-        leftToRight.setByX(-400);
-        leftToRight.setByY(-400);
-
-
-        RotateTransition rotate = new RotateTransition();
-        rotate.setNode(yellowBeanie);
-        rotate.setDuration(Duration.millis(400));
-        rotate.setCycleCount(5);
-        rotate.setInterpolator(Interpolator.LINEAR);
-        rotate.setByAngle(360);
-        rotate.setAxis(Rotate.Z_AXIS);
-
-
-        TranslateTransition upAndDown = new TranslateTransition();
-        upAndDown.setNode(yellowBeanie);
-        upAndDown.setDuration(Duration.millis(1000));
-        upAndDown.setCycleCount(TranslateTransition.INDEFINITE);
-        upAndDown.setAutoReverse(true);
-        upAndDown.setByY(15);
-
-
-        ScaleTransition scale = new ScaleTransition();
-        scale.setNode(yellowBeanie);
-        scale.setDuration(Duration.millis(1000));
-        scale.setByX(1.5f);
-        scale.setByY(1.5f);
-        scale.setCycleCount(2);
-        scale.setAutoReverse(true);
-
-        scale.play();
-        rotate.play();
-        leftToRight.play();
-        upAndDown.play();
-    }
-
-    public void redWins() {
-
-        instructions.setVisible(false);
-        redBeanie.setVisible(true);
-        yourTurnText.setText("Red, you won!"); // giuli´s note to self: your turn text instead of who won - delete who won
-
-        TranslateTransition leftToRight = new TranslateTransition();
-        leftToRight.setNode(redBeanie);
-        leftToRight.setDuration(Duration.millis(1000));
-        leftToRight.setCycleCount(2);
-        leftToRight.setAutoReverse(true);
-        leftToRight.setByX(-400);
-        leftToRight.setByY(-400);
-
-
-        RotateTransition rotate = new RotateTransition();
-        rotate.setNode(redBeanie);
-        rotate.setDuration(Duration.millis(400));
-        rotate.setCycleCount(5);
-        rotate.setInterpolator(Interpolator.LINEAR);
-        rotate.setByAngle(360);
-        rotate.setAxis(Rotate.Z_AXIS);
-
-
-        TranslateTransition upAndDown = new TranslateTransition();
-        upAndDown.setNode(redBeanie);
-        upAndDown.setDuration(Duration.millis(1000));
-        upAndDown.setCycleCount(TranslateTransition.INDEFINITE);
-        upAndDown.setAutoReverse(true);
-        upAndDown.setByY(15);
-
-
-        ScaleTransition scale = new ScaleTransition();
-        scale.setNode(redBeanie);
-        scale.setDuration(Duration.millis(1000));
-        scale.setByX(1.5f);
-        scale.setByY(1.5f);
-        scale.setCycleCount(2);
-        scale.setAutoReverse(true);
-
-        scale.play();
-        rotate.play();
-        leftToRight.play();
-        upAndDown.play();
-    }
-
-    public void Draw() {
-        Draw.setText("Its a Draw!");
-        Draw.setVisible(true);
+    public void draw() {
+        draw.setText("Draw!");
+        draw.setVisible(true);
     }
 
 
@@ -145,9 +45,9 @@ public class Controller implements Shape {
         if (CheckIfWon.checkIfWon(Main.gameBoard)) {        // method being called when somebody wins the game
             yourTurnText.setText("");
             if (MakeMove.counterForSwitchingPlayer % 2 == 1) {  //second turn = Red Player wins
-                redWins();
+                WhoWonTransition.redWins(this);
             } else {                                           //first turn = Yellow Player wins
-                yellowWins();
+                WhoWonTransition.yellowWins(this);
             }
         }
     }
@@ -159,9 +59,9 @@ public class Controller implements Shape {
         if (CheckIfWon.checkIfWon(Main.gameBoard)) {
             yourTurnText.setText("");
             if (MakeMove.counterForSwitchingPlayer % 2 == 1) {
-                redWins();
+                WhoWonTransition.redWins(this);
             } else {
-                yellowWins();
+                WhoWonTransition.yellowWins(this);
             }
         }
     }
@@ -173,51 +73,51 @@ public class Controller implements Shape {
         if (CheckIfWon.checkIfWon(Main.gameBoard)) {
             yourTurnText.setText("");
             if (MakeMove.counterForSwitchingPlayer % 2 == 1) {
-                redWins();
+                WhoWonTransition.redWins(this);
             } else {
-                yellowWins();
+                WhoWonTransition.yellowWins(this);
             }
         }
     }
 
-    public void col3(javafx.event.ActionEvent  col3Event) {
+    public void col3(javafx.event.ActionEvent col3Event) {
         if (!CheckIfWon.checkIfWon(Main.gameBoard)) {
             MakeMove.makeMoveCol3(this);
         }
         if (CheckIfWon.checkIfWon(Main.gameBoard)) {
             yourTurnText.setText("");
             if (MakeMove.counterForSwitchingPlayer % 2 == 1) {
-                redWins();
+                WhoWonTransition.redWins(this);
             } else {
-                yellowWins();
+                WhoWonTransition.yellowWins(this);
             }
         }
     }
 
-    public void col4(javafx.event.ActionEvent  col4Event) {
+    public void col4(javafx.event.ActionEvent col4Event) {
         if (!CheckIfWon.checkIfWon(Main.gameBoard)) {
             MakeMove.makeMoveCol4(this);
         }
         if (CheckIfWon.checkIfWon(Main.gameBoard)) {
             yourTurnText.setText("");
             if (MakeMove.counterForSwitchingPlayer % 2 == 1) {
-                redWins();
+                WhoWonTransition.redWins(this);
             } else {
-                yellowWins();
+                WhoWonTransition.yellowWins(this);
             }
         }
     }
 
-    public void col5(javafx.event.ActionEvent  col5Event) {
+    public void col5(javafx.event.ActionEvent col5Event) {
         if (!CheckIfWon.checkIfWon(Main.gameBoard)) {
             MakeMove.makeMoveCol5(this);
         }
         if (CheckIfWon.checkIfWon(Main.gameBoard)) {
             yourTurnText.setText("");
             if (MakeMove.counterForSwitchingPlayer % 2 == 1) {
-                redWins();
+                WhoWonTransition.redWins(this);
             } else {
-                yellowWins();
+                WhoWonTransition.yellowWins(this);
             }
         }
     }
@@ -229,9 +129,9 @@ public class Controller implements Shape {
         if (CheckIfWon.checkIfWon(Main.gameBoard)) {
             yourTurnText.setText("");
             if (MakeMove.counterForSwitchingPlayer % 2 == 1) {
-                redWins();
+                WhoWonTransition.redWins(this);
             } else {
-                yellowWins();
+                WhoWonTransition.yellowWins(this);
             }
         }
     }
@@ -251,7 +151,7 @@ public class Controller implements Shape {
         redBeanie.setVisible(false);
         yellowBeanie.setVisible(false);
         instructions.setVisible(true);
-        Reset.DrawReset(Draw);
+        Reset.drawReset(draw);
 
         Reset.reset();
 
@@ -307,7 +207,6 @@ public class Controller implements Shape {
     public PathIterator getPathIterator(AffineTransform at, double flatness) {
         return null;
     }
-
 
 
 }

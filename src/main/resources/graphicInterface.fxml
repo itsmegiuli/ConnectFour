@@ -213,12 +213,7 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <ImageView fx:id="redWonImage" fitHeight="150.0" fitWidth="200.0" layoutX="2.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" rotate="51.8" scaleX="0.5" scaleY="0.5" visible="false" x="1.0" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@chip_red.png" />
-                     </image>
-                  </ImageView>
-                  <Label fx:id="Draw" alignment="CENTER" layoutX="10.0" layoutY="129.0" prefHeight="128.0" prefWidth="344.0" text="Its a Draw" textFill="RED" visible="false" GridPane.rowIndex="1">
+                  <Label fx:id="draw" alignment="CENTER" layoutX="10.0" layoutY="129.0" prefHeight="128.0" prefWidth="344.0" text="Its a Draw" textFill="RED" visible="false" GridPane.rowIndex="1">
                      <font>
                         <Font size="20.0" />
                      </font>

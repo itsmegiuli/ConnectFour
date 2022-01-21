@@ -7,25 +7,25 @@ package connect4;
  */
 
 public class CheckIfWon {
-    public static boolean checkIfWon(char[][] gameBoard) {
+    protected static boolean checkIfWon(char[][] gameBoard) { //access modifier (modified methods only - not the class itself) changed to protected
         boolean won = false;
 
-        for ( int j = 0 ; j < gameBoard.length ; j++ ) {
+        for (int j = 0; j < gameBoard.length; j++) {
             // **HORIZONTALLY**
             //checks all row-combinations, to see if there are 4 of the same symbol (X or O) next to each other
-            if ( gameBoard[ j ][ 0 ] == gameBoard[ j ][ 1 ] && gameBoard[ j ][ 1 ] == gameBoard[ j ][ 2 ] && gameBoard[ j ][ 2 ] == gameBoard[ j ][ 3 ] ||
-                    gameBoard[ j ][ 1 ] == gameBoard[ j ][ 2 ] && gameBoard[ j ][ 2 ] == gameBoard[ j ][ 3 ] && gameBoard[ j ][ 3 ] == gameBoard[ j ][ 4 ] ||
-                    gameBoard[ j ][ 2 ] == gameBoard[ j ][ 3 ] && gameBoard[ j ][ 3 ] == gameBoard[ j ][ 4 ] && gameBoard[ j ][ 4 ] == gameBoard[ j ][ 5 ] ||
-                    gameBoard[ j ][ 3 ] == gameBoard[ j ][ 4 ] && gameBoard[ j ][ 4 ] == gameBoard[ j ][ 5 ] && gameBoard[ j ][ 5 ] == gameBoard[ j ][ 6 ] ) {
+            if (gameBoard[j][0] == gameBoard[j][1] && gameBoard[j][1] == gameBoard[j][2] && gameBoard[j][2] == gameBoard[j][3] ||
+                    gameBoard[j][1] == gameBoard[j][2] && gameBoard[j][2] == gameBoard[j][3] && gameBoard[j][3] == gameBoard[j][4] ||
+                    gameBoard[j][2] == gameBoard[j][3] && gameBoard[j][3] == gameBoard[j][4] && gameBoard[j][4] == gameBoard[j][5] ||
+                    gameBoard[j][3] == gameBoard[j][4] && gameBoard[j][4] == gameBoard[j][5] && gameBoard[j][5] == gameBoard[j][6]) {
                 won = true;
             }
 
             // **VERTICALLY**
             //checks all column-combinations, to see if there are 4 of the same symbol (X or O) next to each other
             if (
-                    gameBoard[ 1 ][ j ] == gameBoard[ 2 ][ j ] && gameBoard[ 2 ][ j ] == gameBoard[ 3 ][ j ] && gameBoard[ 3 ][ j ] == gameBoard[ 4 ][ j ] ||
-                    gameBoard[ 2 ][ j ] == gameBoard[ 3 ][ j ] && gameBoard[ 3 ][ j ] == gameBoard[ 4 ][ j ] && gameBoard[ 4 ][ j ] == gameBoard[ 5 ][ j ] ||
-                    gameBoard[ 3 ][ j ] == gameBoard[ 4 ][ j ] && gameBoard[ 4 ][ j ] == gameBoard[ 5 ][ j ] && gameBoard[ 5 ][ j ] == gameBoard[ 6 ][ j ] ) {
+                    gameBoard[1][j] == gameBoard[2][j] && gameBoard[2][j] == gameBoard[3][j] && gameBoard[3][j] == gameBoard[4][j] ||
+                            gameBoard[2][j] == gameBoard[3][j] && gameBoard[3][j] == gameBoard[4][j] && gameBoard[4][j] == gameBoard[5][j] ||
+                            gameBoard[3][j] == gameBoard[4][j] && gameBoard[4][j] == gameBoard[5][j] && gameBoard[5][j] == gameBoard[6][j]) {
                 won = true;
             }
         }
@@ -33,40 +33,41 @@ public class CheckIfWon {
 
         // **DIAGONALLY**
         //checks all diagonal combinations, to see if there are 4 of the same symbol (X or O) diagonally across from each other
-        for ( int row = 0 ; row < gameBoard.length - 3 ; row++ ) {
-            for ( int col = 0 ; col < gameBoard[ row ].length - 3 ; col++ ) {
-                int element = gameBoard[ row ][ col ];
-                if ( element == gameBoard[ row + 1 ][ col + 1 ] &&
-                        element == gameBoard[ row + 2 ][ col + 2 ] &&
-                        element == gameBoard[ row + 3 ][ col + 3 ] ) {
+        for (int row = 0; row < gameBoard.length - 3; row++) {
+            for (int col = 0; col < gameBoard[row].length - 3; col++) {
+                int element = gameBoard[row][col];
+                if (element == gameBoard[row + 1][col + 1] &&
+                        element == gameBoard[row + 2][col + 2] &&
+                        element == gameBoard[row + 3][col + 3]) {
                     won = true;
                 }
             }
         }
 
         // **DIAGONALLY** //see above
-        for ( int row = 0 ; row < gameBoard.length - 3 ; row++ ) {
-            for ( int col = 3 ; col < gameBoard[ row ].length ; col++ ) {
-                int element = gameBoard[ row ][ col ];
-                if ( element == gameBoard[ row + 1 ][ col - 1 ] &&
-                        element == gameBoard[ row + 2 ][ col - 2 ] &&
-                        element == gameBoard[ row + 3 ][ col - 3 ] ) {
+        for (int row = 0; row < gameBoard.length - 3; row++) {
+            for (int col = 3; col < gameBoard[row].length; col++) {
+                int element = gameBoard[row][col];
+                if (element == gameBoard[row + 1][col - 1] &&
+                        element == gameBoard[row + 2][col - 2] &&
+                        element == gameBoard[row + 3][col - 3]) {
                     won = true;
                 }
             }
         }
         return won;
     }
-    public static boolean checkIfDraw(char[][] gameBoard) {
+
+    protected static boolean checkIfDraw(char[][] gameBoard) {
         boolean draw = false;
         int xy = 0;
-        for ( int i = 0 ; i < 7 ; i++ ) {
-            for ( int j = 0 ; j <= 6 ; j++ ) {
-                if ( gameBoard[ i ][ j ] == 'X' || gameBoard[ i ][ j ] == 'O' )
+        for (int i = 0; i < 7; i++) {
+            for (int j = 0; j <= 6; j++) {
+                if (gameBoard[i][j] == 'X' || gameBoard[i][j] == 'O')
                     xy++;
             }
         }
-        if ( xy == 42 )
+        if (xy == 42)
             draw = true;
         return draw;
 

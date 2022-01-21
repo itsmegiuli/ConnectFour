@@ -8,14 +8,14 @@ import javafx.scene.shape.Circle;
 
 public class MakeMove {
 
-    public static int counterForSwitchingPlayer = 1;
-    public static int counterCol0 = 0, counterCol1 = 0, counterCol2 = 0, counterCol3 = 0, counterCol4 = 0, counterCol5 = 0, counterCol6 = 0;
-    public static int col0 = 6, col1 = 6, col2 = 6, col3 = 6, col4 = 6, col5 = 6, col6 = 6;
-    static String yourTurnYellow = "Yellow, make your move!";
-    static String yourTurnRed = "Red, make your move!";
+    protected static int counterForSwitchingPlayer = 1;
+    protected static int counterCol0 = 0, counterCol1 = 0, counterCol2 = 0, counterCol3 = 0, counterCol4 = 0, counterCol5 = 0, counterCol6 = 0;
+    protected static int col0 = 6, col1 = 6, col2 = 6, col3 = 6, col4 = 6, col5 = 6, col6 = 6;
+    protected static String yourTurnYellow = "Yellow, make your move!";
+    protected static String yourTurnRed = "Red, make your move!";
 
 
-    public static void makeMoveCol0(Controller controller) {
+    protected static void makeMoveCol0(Controller controller) {
         counterCol0++;
         counterForSwitchingPlayer++;       // counts one move, so the Game knows it´s the other Players turn
 
@@ -38,16 +38,16 @@ public class MakeMove {
 
             col0--;  // column counter starts at 6 (at the bottom) -> subtracting counts to know the place of the chip
         } else {
-            if ( !controller.Draw.isVisible() ) {
+            if ( !controller.draw.isVisible() ) {
                 Reset.fullCol( controller.fullCol );
             }
         }
         if ( CheckIfWon.checkIfDraw( Main.gameBoard) ) {
-            controller.Draw();
+            controller.draw();
         }
     }
 
-    public static void makeMoveCol1(Controller controller) { //method: see makeMoveCol0 (makeMoveCol2, etc.)
+    protected static void makeMoveCol1(Controller controller) { //method: see makeMoveCol0 (makeMoveCol2, etc.)
         counterCol1++;
         counterForSwitchingPlayer++;
 
@@ -71,15 +71,15 @@ public class MakeMove {
             col1--;
 
         } else {
-            if ( !controller.Draw.isVisible() )
+            if ( !controller.draw.isVisible() )
             Reset.fullCol( controller.fullCol );
         }
         if ( CheckIfWon.checkIfDraw( Main.gameBoard) ) {
-            controller.Draw();
+            controller.draw();
         }
     }
 
-    public static void makeMoveCol2(Controller controller) {
+    protected static void makeMoveCol2(Controller controller) {
         counterCol2++;
         counterForSwitchingPlayer++;
 
@@ -105,15 +105,15 @@ public class MakeMove {
             col2--;
 
         } else {
-            if ( !controller.Draw.isVisible() )
+            if ( !controller.draw.isVisible() )
             Reset.fullCol( controller.fullCol );
         }
         if ( CheckIfWon.checkIfDraw( Main.gameBoard) ) {
-            controller.Draw();
+            controller.draw();
         }
     }
 
-    public static void makeMoveCol3(Controller controller) {
+    protected static void makeMoveCol3(Controller controller) {
         counterCol3++;
         counterForSwitchingPlayer++;
 
@@ -138,15 +138,15 @@ public class MakeMove {
             col3--;
 
         } else {
-            if ( !controller.Draw.isVisible() )
+            if ( !controller.draw.isVisible() )
             Reset.fullCol( controller.fullCol );
         }
         if ( CheckIfWon.checkIfDraw( Main.gameBoard) ) {
-            controller.Draw();
+            controller.draw();
         }
     }
 
-    public static void makeMoveCol4(Controller controller) {
+    protected static void makeMoveCol4(Controller controller) {
         counterCol4++;
         counterForSwitchingPlayer++;
 
@@ -170,15 +170,15 @@ public class MakeMove {
             } else Main.gameBoard[ col4 ][ 4 ] = 'O';
             col4--;
         } else {
-            if ( !controller.Draw.isVisible() )
+            if ( !controller.draw.isVisible() )
             Reset.fullCol( controller.fullCol );
         }
         if ( CheckIfWon.checkIfDraw( Main.gameBoard) ) {
-            controller.Draw();
+            controller.draw();
         }
     }
 
-    public static void makeMoveCol5(Controller controller) {
+    protected static void makeMoveCol5(Controller controller) {
         counterCol5++;
         counterForSwitchingPlayer++;
 
@@ -204,16 +204,16 @@ public class MakeMove {
             col5--;
 
         } else {
-            if ( !controller.Draw.isVisible() )
+            if ( !controller.draw.isVisible() )
             Reset.fullCol( controller.fullCol );
         }
 
         if ( CheckIfWon.checkIfDraw( Main.gameBoard) ) {
-            controller.Draw();
+            controller.draw();
         }
     }
 
-    public static void makeMoveCol6(Controller controller) {
+    protected static void makeMoveCol6(Controller controller) {
         counterCol6++;
         counterForSwitchingPlayer++;
 
@@ -239,16 +239,13 @@ public class MakeMove {
             col6--;
 
         } else {
-            if ( !controller.Draw.isVisible() )
+            if ( !controller.draw.isVisible() )
             Reset.fullCol( controller.fullCol ); //see class Reset
         }
         if ( CheckIfWon.checkIfDraw( Main.gameBoard) ) {
-            controller.Draw();
+            controller.draw();
         }
     }
 
-    public static void makeDraw(Controller controller) {
-
-    }
 }
 

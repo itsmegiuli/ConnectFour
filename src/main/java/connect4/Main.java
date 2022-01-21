@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 public class Main extends Application {
 
 
-    public static char[][] gameBoard = new char[][]{
+    protected static char[][] gameBoard = new char[][]{
             {'a', 'b', 'c', 'd', 'e', 'f', 'g'},
             {'h', 'i', 'j', 'k', 'l', 'm', 'n'},
             {'o', 'p', 'q', 'r', 's', 't', 'u'},
@@ -25,7 +25,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/graphicInterface.fxml"));
-        primaryStage.setTitle("Connect Four");
+        primaryStage.setTitle("Connect Four by Puzzled");
         primaryStage.setScene(new Scene(root, 800, 500));
         primaryStage.show();
     }
