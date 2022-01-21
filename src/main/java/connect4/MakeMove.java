@@ -16,17 +16,11 @@ public class MakeMove {
 
 
     public static void makeMoveCol0(Controller controller) {
-        //   CheckIfWon.checkIfDraw( counterCol0 );
-        //   if ( CheckIfWon.checkIfDraw( counterCol0 ) ==true){
-        //       controller.Draw}
         counterCol0++;
         counterForSwitchingPlayer++;       // counts one move, so the Game knows it´s the other Players turn
 
         if ( counterCol0 <= 6 ) {
-           // if ( !controller.Draw.isVisible() ) {
-                Reset.fullColReset( controller.fullCol );
-           // }
-
+            Reset.fullColReset( controller.fullCol );
             Circle newChip = new Circle( 26 );
             controller.playGround.getChildren().add( newChip );
             if ( counterForSwitchingPlayer % 2 == 1 ) {
@@ -77,6 +71,7 @@ public class MakeMove {
             col1--;
 
         } else {
+            if ( !controller.Draw.isVisible() )
             Reset.fullCol( controller.fullCol );
         }
         if ( CheckIfWon.checkIfDraw( Main.gameBoard) ) {
@@ -110,6 +105,7 @@ public class MakeMove {
             col2--;
 
         } else {
+            if ( !controller.Draw.isVisible() )
             Reset.fullCol( controller.fullCol );
         }
         if ( CheckIfWon.checkIfDraw( Main.gameBoard) ) {
@@ -142,6 +138,7 @@ public class MakeMove {
             col3--;
 
         } else {
+            if ( !controller.Draw.isVisible() )
             Reset.fullCol( controller.fullCol );
         }
         if ( CheckIfWon.checkIfDraw( Main.gameBoard) ) {
@@ -173,6 +170,7 @@ public class MakeMove {
             } else Main.gameBoard[ col4 ][ 4 ] = 'O';
             col4--;
         } else {
+            if ( !controller.Draw.isVisible() )
             Reset.fullCol( controller.fullCol );
         }
         if ( CheckIfWon.checkIfDraw( Main.gameBoard) ) {
@@ -206,6 +204,7 @@ public class MakeMove {
             col5--;
 
         } else {
+            if ( !controller.Draw.isVisible() )
             Reset.fullCol( controller.fullCol );
         }
 
@@ -240,11 +239,16 @@ public class MakeMove {
             col6--;
 
         } else {
+            if ( !controller.Draw.isVisible() )
             Reset.fullCol( controller.fullCol ); //see class Reset
         }
         if ( CheckIfWon.checkIfDraw( Main.gameBoard) ) {
             controller.Draw();
         }
+    }
+
+    public static void makeDraw(Controller controller) {
+
     }
 }
 

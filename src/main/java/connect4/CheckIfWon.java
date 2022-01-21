@@ -1,7 +1,5 @@
 package connect4;
 
-import com.sun.jdi.CharValue;
-
 /**
  * CheckIfWon checks if there are any 4-combinations in our 2D Array, that have the same char (==).
  * The "original" char array has 42 different characters, it only changes when the players make their move.
@@ -26,8 +24,8 @@ public class CheckIfWon {
             //checks all column-combinations, to see if there are 4 of the same symbol (X or O) next to each other
             if (
                     gameBoard[ 1 ][ j ] == gameBoard[ 2 ][ j ] && gameBoard[ 2 ][ j ] == gameBoard[ 3 ][ j ] && gameBoard[ 3 ][ j ] == gameBoard[ 4 ][ j ] ||
-                            gameBoard[ 2 ][ j ] == gameBoard[ 3 ][ j ] && gameBoard[ 3 ][ j ] == gameBoard[ 4 ][ j ] && gameBoard[ 4 ][ j ] == gameBoard[ 5 ][ j ] ||
-                            gameBoard[ 3 ][ j ] == gameBoard[ 4 ][ j ] && gameBoard[ 4 ][ j ] == gameBoard[ 5 ][ j ] && gameBoard[ 5 ][ j ] == gameBoard[ 6 ][ j ] ) {
+                    gameBoard[ 2 ][ j ] == gameBoard[ 3 ][ j ] && gameBoard[ 3 ][ j ] == gameBoard[ 4 ][ j ] && gameBoard[ 4 ][ j ] == gameBoard[ 5 ][ j ] ||
+                    gameBoard[ 3 ][ j ] == gameBoard[ 4 ][ j ] && gameBoard[ 4 ][ j ] == gameBoard[ 5 ][ j ] && gameBoard[ 5 ][ j ] == gameBoard[ 6 ][ j ] ) {
                 won = true;
             }
         }
@@ -59,7 +57,6 @@ public class CheckIfWon {
         }
         return won;
     }
-
     public static boolean checkIfDraw(char[][] gameBoard) {
         boolean draw = false;
         int xy = 0;
@@ -69,7 +66,7 @@ public class CheckIfWon {
                     xy++;
             }
         }
-        if ( xy == 6 )
+        if ( xy == 42 )
             draw = true;
         return draw;
 
