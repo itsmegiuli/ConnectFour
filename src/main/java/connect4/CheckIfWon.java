@@ -42,7 +42,8 @@ public class CheckIfWon {
             }
         }
 
-        // **DIAGONALLY** //see above
+        // **DIAGONALLY**
+        // see above
         for (int row = 0; row < gameBoard.length - 3; row++) {
             for (int col = 3; col < gameBoard[row].length; col++) {
                 int element = gameBoard[row][col];

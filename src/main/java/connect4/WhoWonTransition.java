@@ -16,6 +16,13 @@ public class WhoWonTransition {
 
         controller.instructions.setVisible(false);
         controller.yellowBeanie.setVisible(true);
+        controller.playGround.getChildren().remove(controller.row0Button);
+        controller.playGround.getChildren().remove(controller.row1Button);
+        controller.playGround.getChildren().remove(controller.row2Button);
+        controller.playGround.getChildren().remove(controller.row3Button);
+        controller.playGround.getChildren().remove(controller.row4Button);
+        controller.playGround.getChildren().remove(controller.row5Button);
+        controller.playGround.getChildren().remove(controller.row6Button);
 
         TranslateTransition leftToRight = new TranslateTransition();
         leftToRight.setNode(controller.yellowBeanie);
@@ -62,6 +69,13 @@ public class WhoWonTransition {
         controller.instructions.setVisible(false);
         controller.redBeanie.setVisible(true);
         controller.yourTurnText.setText("Red, you won!");
+        controller.playGround.getChildren().remove(controller.row0Button);
+        controller.playGround.getChildren().remove(controller.row1Button);
+        controller.playGround.getChildren().remove(controller.row2Button);
+        controller.playGround.getChildren().remove(controller.row3Button);
+        controller.playGround.getChildren().remove(controller.row4Button);
+        controller.playGround.getChildren().remove(controller.row5Button);
+        controller.playGround.getChildren().remove(controller.row6Button);
 
         TranslateTransition leftToRight = new TranslateTransition();
         leftToRight.setNode(controller.redBeanie);
