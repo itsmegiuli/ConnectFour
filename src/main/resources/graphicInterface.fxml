@@ -205,12 +205,12 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Button fx:id="reset" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#resetButton" text="Reset / Play Again" textAlignment="CENTER" visible="true" GridPane.rowIndex="3">
+                  <Button fx:id="resetText" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#resetButton" text="   Reset   " textAlignment="CENTER" GridPane.rowIndex="3">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
                      <GridPane.margin>
-                        <Insets bottom="5.0" left="200.0" right="5.0" top="5.0" />
+                        <Insets bottom="5.0" left="240.0" right="5.0" top="5.0" />
                      </GridPane.margin>
                   </Button>
                   <Label fx:id="whoWonText" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="128.0" prefWidth="344.0" textFill="#01009e" wrapText="true" GridPane.rowIndex="1">

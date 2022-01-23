@@ -23,7 +23,7 @@ public class Controller implements Shape {
     public Label fullCol;
     public Label draw;
     public ToggleButton row0Button, row1Button, row2Button, row3Button, row4Button, row5Button, row6Button;
-    public Button reset;
+    public Button resetText;
     public ImageView redBeanie;
     public ImageView yellowBeanie;
     public Label instructions;
@@ -130,8 +130,19 @@ public class Controller implements Shape {
     }
 
     public void draw() {  //displays draw message on the screen
-        draw.setText("Draw!");
+        draw.setText("It\'s a draw!");
         draw.setVisible(true);
+
+        yourTurnText.setText("");
+        resetText.setText("     Reset     " );
+        instructions.setVisible(false);
+        playGround.getChildren().remove(row0Button);
+        playGround.getChildren().remove(row1Button);
+        playGround.getChildren().remove(row2Button);
+        playGround.getChildren().remove(row3Button);
+        playGround.getChildren().remove(row4Button);
+        playGround.getChildren().remove(row5Button);
+        playGround.getChildren().remove(row6Button);
     }
 
     public void resetButton(javafx.event.ActionEvent reset) {  // clears the board of all set chips (and buttons); adds buttons again
@@ -144,10 +155,12 @@ public class Controller implements Shape {
         playGround.getChildren().add(row4Button);
         playGround.getChildren().add(row5Button);
         playGround.getChildren().add(row6Button);
-        yourTurnText.setText("Yellow, start again!");
+        yourTurnText.setText("Red, start the game!");
         redBeanie.setVisible(false);
         yellowBeanie.setVisible(false);
         instructions.setVisible(true);
+        resetText.setText("     Reset     " );
+
         Reset.drawReset(draw);
 
         Reset.reset();
