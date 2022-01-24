@@ -25,6 +25,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("/graphicInterface.fxml"));
         primaryStage.setTitle("Connect Four by Puzzled");
         primaryStage.setScene(new Scene(root, 800, 500));
+        primaryStage.setResizable(false);
         primaryStage.show();
     }
 

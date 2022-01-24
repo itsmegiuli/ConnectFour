@@ -116,4 +116,14 @@ public class WhoWonTransition {
         leftToRight.play();
         upAndDown.play();
     }
+
+    protected static void arrow(Controller controller) {
+
+        TranslateTransition arrowLeftToRight = new TranslateTransition();
+        arrowLeftToRight.setNode(controller.arrow);
+        arrowLeftToRight.setDuration(Duration.millis(1000));
+        arrowLeftToRight.setCycleCount(5);
+        arrowLeftToRight.setAutoReverse(true);
+        arrowLeftToRight.setByX(-100);
+    }
 }
