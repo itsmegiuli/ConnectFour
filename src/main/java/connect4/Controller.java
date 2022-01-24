@@ -1,13 +1,11 @@
 package connect4;
 
-import javafx.animation.TranslateTransition;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
-import javafx.util.Duration;
 
 import java.awt.*;
 import java.awt.geom.AffineTransform;
@@ -29,7 +27,6 @@ public class Controller implements Shape {
     public ImageView redBeanie;
     public ImageView yellowBeanie;
     public Label instructions;
-    public ImageView arrow;
 
 
     public void col0(javafx.event.ActionEvent col0Event) {    //method on click of Buttons (1-7)
@@ -135,7 +132,6 @@ public class Controller implements Shape {
     public void draw() {  //displays draw message on the screen
         draw.setText("Draw!");
         draw.setVisible(true);
-        movingArrow();
     }
 
     public void resetButton(javafx.event.ActionEvent reset) {  // clears the board of all set chips (and buttons); adds buttons again
@@ -154,22 +150,10 @@ public class Controller implements Shape {
         instructions.setVisible(true);
         Reset.drawReset(draw);
 
-       //WhoWonTransition.arrow(Controller controller);
         Reset.reset();
 
     }
 
-    public void movingArrow(){
-        TranslateTransition arrowMoving = new TranslateTransition();
-        arrowMoving.setNode(arrow);
-        arrowMoving.setDuration(Duration.millis(500));
-        arrowMoving.setCycleCount(10);
-        arrowMoving.setAutoReverse(true);
-        arrowMoving.setByX(-50);
-        arrow.setVisible(true);
-        arrowMoving.play();
-
-    }
 
     @Override
     public Rectangle getBounds() {

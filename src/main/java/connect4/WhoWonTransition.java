@@ -16,6 +16,8 @@ public class WhoWonTransition {
 
         controller.instructions.setVisible(false);
         controller.yellowBeanie.setVisible(true);
+        controller.resetText.setText(" Play again " );
+
         controller.playGround.getChildren().remove(controller.row0Button);
         controller.playGround.getChildren().remove(controller.row1Button);
         controller.playGround.getChildren().remove(controller.row2Button);
@@ -69,6 +71,7 @@ public class WhoWonTransition {
         controller.instructions.setVisible(false);
         controller.redBeanie.setVisible(true);
         controller.yourTurnText.setText("Red, you won!");
+        controller.resetText.setText(" Play again " );
         controller.playGround.getChildren().remove(controller.row0Button);
         controller.playGround.getChildren().remove(controller.row1Button);
         controller.playGround.getChildren().remove(controller.row2Button);

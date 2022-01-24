@@ -6,7 +6,7 @@ public class Reset {
 
     protected static void reset() { // when the "reset/play again" - button is clicked, the game restarts
 
-        MakeMove.counterForSwitchingPlayer = 1; //number of turns is reset to 1
+        MakeMove.counterForSwitchingPlayer = 0; //number of turns is reset to 1
         MakeMove.counterCol0 = 0; //counterCOl 0-6 needs to be 0 again
         MakeMove.counterCol1 = 0;
         MakeMove.counterCol2 = 0;
