@@ -6,7 +6,7 @@ public class Reset {
 
     protected static void reset() { // when the "reset/play again" - button is clicked, the game restarts
 
-        MakeMove.counterForSwitchingPlayer = 0; //number of turns is reset to 1
+        MakeMove.counterForSwitchingPlayer = 0; //number of turns is 0 so red starts this time
         MakeMove.counterCol0 = 0; //counterCOl 0-6 needs to be 0 again
         MakeMove.counterCol1 = 0;
         MakeMove.counterCol2 = 0;
@@ -21,7 +21,6 @@ public class Reset {
         MakeMove.col4 = 6;
         MakeMove.col5 = 6;
         MakeMove.col6 = 6;
-
 
         // we need the same gameBoard as the one from the beginning, X´s and O´s need to be removed again from the previous game
         Main.gameBoard = new char[][]{

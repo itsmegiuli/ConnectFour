@@ -24,7 +24,6 @@ public class CheckIfWon {
             //checks all column-combinations, to see if there are 4 of the same symbol (X or O) next to each other
             if (gameBoard[1][j] == gameBoard[2][j] && gameBoard[2][j] == gameBoard[3][j] && gameBoard[3][j] == gameBoard[4][j] ||
                             gameBoard[2][j] == gameBoard[3][j] && gameBoard[3][j] == gameBoard[4][j] && gameBoard[4][j] == gameBoard[5][j] ||
-                            gameBoard[2][j] == gameBoard[3][j] && gameBoard[3][j] == gameBoard[4][j] && gameBoard[4][j] == gameBoard[5][j] ||
                             gameBoard[3][j] == gameBoard[4][j] && gameBoard[4][j] == gameBoard[5][j] && gameBoard[5][j] == gameBoard[6][j]) {
                 won = true;
             }

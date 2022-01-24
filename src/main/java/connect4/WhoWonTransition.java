@@ -4,6 +4,7 @@ import javafx.animation.Interpolator;
 import javafx.animation.RotateTransition;
 import javafx.animation.ScaleTransition;
 import javafx.animation.TranslateTransition;
+import javafx.scene.image.ImageView;
 import javafx.scene.transform.Rotate;
 import javafx.util.Duration;
 
@@ -120,13 +121,15 @@ public class WhoWonTransition {
         upAndDown.play();
     }
 
-    protected static void arrow(Controller controller) {
+    public static void movingArrow(ImageView arrow){
+        TranslateTransition arrowMoving = new TranslateTransition();
+        arrowMoving.setNode(arrow);
+        arrowMoving.setDuration(Duration.millis(500));
+        arrowMoving.setCycleCount(10);
+        arrowMoving.setAutoReverse(true);
+        arrowMoving.setByX(-50);
+        arrow.setVisible(true);
+        arrowMoving.play();
 
-        TranslateTransition arrowLeftToRight = new TranslateTransition();
-        arrowLeftToRight.setNode(controller.arrow);
-        arrowLeftToRight.setDuration(Duration.millis(1000));
-        arrowLeftToRight.setCycleCount(5);
-        arrowLeftToRight.setAutoReverse(true);
-        arrowLeftToRight.setByX(-100);
     }
 }
