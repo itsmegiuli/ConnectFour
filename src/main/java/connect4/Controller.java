@@ -31,113 +31,113 @@ public class Controller implements Shape {
 
 
     public void col0(javafx.event.ActionEvent col0Event) {    //method on click of Buttons (1-7)
-        if (!CheckIfWon.checkIfWon(Main.gameBoard)) {        // if nobody wins, you keep playing the game
+        if (!CheckIf.checkIfWon(Main.gameBoard)) {        // if nobody wins, you keep playing the game
             MakeMove.makeMoveCol0(this);
 
 
         }
-        if (CheckIfWon.checkIfWon(Main.gameBoard)) {        // method being called when somebody wins the game
+        if (CheckIf.checkIfWon(Main.gameBoard)) {        // method being called when somebody wins the game
             yourTurnText.setText("");
             if (MakeMove.counterForSwitchingPlayer % 2 == 1) {  //second turn = Red Player wins
-                WhoWonTransition.redWins(this);
+                Transitions.redWins(this);
             } else {                                           //first turn = Yellow Player wins
-                WhoWonTransition.yellowWins(this);
+                Transitions.yellowWins(this);
             }
         }
     }
 
     public void col1(javafx.event.ActionEvent col1Event) {     // method: see col0 (col2, col3, etc.)
-        if (!CheckIfWon.checkIfWon(Main.gameBoard)) {
+        if (!CheckIf.checkIfWon(Main.gameBoard)) {
             MakeMove.makeMoveCol1(this);
         }
-        if (CheckIfWon.checkIfWon(Main.gameBoard)) {
+        if (CheckIf.checkIfWon(Main.gameBoard)) {
             yourTurnText.setText("");
             if (MakeMove.counterForSwitchingPlayer % 2 == 1) {
-                WhoWonTransition.redWins(this);
+                Transitions.redWins(this);
             } else {
-                WhoWonTransition.yellowWins(this);
+                Transitions.yellowWins(this);
             }
         }
     }
 
     public void col2(javafx.event.ActionEvent col2Event) {     // method: see col0 (& other columns)
-        if (!CheckIfWon.checkIfWon(Main.gameBoard)) {
+        if (!CheckIf.checkIfWon(Main.gameBoard)) {
             MakeMove.makeMoveCol2(this);
         }
-        if (CheckIfWon.checkIfWon(Main.gameBoard)) {
+        if (CheckIf.checkIfWon(Main.gameBoard)) {
             yourTurnText.setText("");
             if (MakeMove.counterForSwitchingPlayer % 2 == 1) {
-                WhoWonTransition.redWins(this);
+                Transitions.redWins(this);
             } else {
-                WhoWonTransition.yellowWins(this);
+                Transitions.yellowWins(this);
             }
         }
     }
 
     public void col3(javafx.event.ActionEvent col3Event) {    // method: see col0 (& other columns)
-        if (!CheckIfWon.checkIfWon(Main.gameBoard)) {
+        if (!CheckIf.checkIfWon(Main.gameBoard)) {
             MakeMove.makeMoveCol3(this);
         }
-        if (CheckIfWon.checkIfWon(Main.gameBoard)) {
+        if (CheckIf.checkIfWon(Main.gameBoard)) {
             yourTurnText.setText("");
             if (MakeMove.counterForSwitchingPlayer % 2 == 1) {
-                WhoWonTransition.redWins(this);
+                Transitions.redWins(this);
             } else {
-                WhoWonTransition.yellowWins(this);
+                Transitions.yellowWins(this);
             }
         }
     }
 
     public void col4(javafx.event.ActionEvent col4Event) {   // method: see col0 (& other columns)
-        if (!CheckIfWon.checkIfWon(Main.gameBoard)) {
+        if (!CheckIf.checkIfWon(Main.gameBoard)) {
             MakeMove.makeMoveCol4(this);
         }
-        if (CheckIfWon.checkIfWon(Main.gameBoard)) {
+        if (CheckIf.checkIfWon(Main.gameBoard)) {
             yourTurnText.setText("");
             if (MakeMove.counterForSwitchingPlayer % 2 == 1) {
-                WhoWonTransition.redWins(this);
+                Transitions.redWins(this);
             } else {
-                WhoWonTransition.yellowWins(this);
+                Transitions.yellowWins(this);
             }
         }
     }
 
     public void col5(javafx.event.ActionEvent col5Event) {   // method: see col0 (& other columns)
-        if (!CheckIfWon.checkIfWon(Main.gameBoard)) {
+        if (!CheckIf.checkIfWon(Main.gameBoard)) {
             MakeMove.makeMoveCol5(this);
         }
-        if (CheckIfWon.checkIfWon(Main.gameBoard)) {
+        if (CheckIf.checkIfWon(Main.gameBoard)) {
             yourTurnText.setText("");
             if (MakeMove.counterForSwitchingPlayer % 2 == 1) {
-                WhoWonTransition.redWins(this);
+                Transitions.redWins(this);
             } else {
-                WhoWonTransition.yellowWins(this);
+                Transitions.yellowWins(this);
             }
         }
     }
 
     public void col6(javafx.event.ActionEvent col6Event) {   // method: see col0 (& other columns)
-        if (!CheckIfWon.checkIfWon(Main.gameBoard)) {
+        if (!CheckIf.checkIfWon(Main.gameBoard)) {
             MakeMove.makeMoveCol6(this);
         }
-        if (CheckIfWon.checkIfWon(Main.gameBoard)) {
+        if (CheckIf.checkIfWon(Main.gameBoard)) {
             yourTurnText.setText("");
             if (MakeMove.counterForSwitchingPlayer % 2 == 1) {
-                WhoWonTransition.redWins(this);
+                Transitions.redWins(this);
             } else {
-                WhoWonTransition.yellowWins(this);
+                Transitions.yellowWins(this);
             }
         }
     }
 
     public void draw() {  //displays draw message on the screen
-        draw.setText("Draw!");
+        draw.setText("It\'s a draw!");
         draw.setVisible(true);
-        WhoWonTransition.movingArrow(arrow);
+        Transitions.movingArrow(arrow);
 
 
         yourTurnText.setText("");
-        resetText.setText("     Reset     " );
+        resetText.setText("     Reset     ");
         instructions.setVisible(false);
         playGround.getChildren().remove(row0Button);
         playGround.getChildren().remove(row1Button);
@@ -162,7 +162,7 @@ public class Controller implements Shape {
         redBeanie.setVisible(false);
         yellowBeanie.setVisible(false);
         instructions.setVisible(true);
-        resetText.setText("     Reset     " );
+        resetText.setText("     Reset     ");
         arrow.setVisible(false);
 
         Reset.drawReset(draw);

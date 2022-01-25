@@ -8,16 +8,15 @@ import javafx.scene.image.ImageView;
 import javafx.scene.transform.Rotate;
 import javafx.util.Duration;
 
-public class WhoWonTransition {
+public class Transitions {
 
     protected static void yellowWins(Controller controller) {
 
         controller.yourTurnText.setText("Yellow, you won!"); // sets the animation when yellow wins
-
+        controller.resetText.setText(" Play again ");
 
         controller.instructions.setVisible(false);
         controller.yellowBeanie.setVisible(true);
-        controller.resetText.setText(" Play again " );
 
         controller.playGround.getChildren().remove(controller.row0Button);
         controller.playGround.getChildren().remove(controller.row1Button);
@@ -33,7 +32,6 @@ public class WhoWonTransition {
         leftToRight.setCycleCount(2);
         leftToRight.setAutoReverse(true);
         leftToRight.setByX(-400);
-        leftToRight.setByY(-400);
 
 
         RotateTransition rotate = new RotateTransition();
@@ -69,10 +67,12 @@ public class WhoWonTransition {
 
     protected static void redWins(Controller controller) {   // sets the animation when red wins
 
+        controller.yourTurnText.setText("Red, you won!");
+        controller.resetText.setText(" Play again ");
+
         controller.instructions.setVisible(false);
         controller.redBeanie.setVisible(true);
-        controller.yourTurnText.setText("Red, you won!");
-        controller.resetText.setText(" Play again " );
+
         controller.playGround.getChildren().remove(controller.row0Button);
         controller.playGround.getChildren().remove(controller.row1Button);
         controller.playGround.getChildren().remove(controller.row2Button);
@@ -87,7 +87,6 @@ public class WhoWonTransition {
         leftToRight.setCycleCount(2);
         leftToRight.setAutoReverse(true);
         leftToRight.setByX(-400);
-        leftToRight.setByY(-400);
 
 
         RotateTransition rotate = new RotateTransition();
@@ -121,14 +120,17 @@ public class WhoWonTransition {
         upAndDown.play();
     }
 
-    public static void movingArrow(ImageView arrow){
+    public static void movingArrow(ImageView arrow) {
+
+        arrow.setVisible(true);
+
         TranslateTransition arrowMoving = new TranslateTransition();
         arrowMoving.setNode(arrow);
         arrowMoving.setDuration(Duration.millis(500));
         arrowMoving.setCycleCount(10);
         arrowMoving.setAutoReverse(true);
         arrowMoving.setByX(-50);
-        arrow.setVisible(true);
+
         arrowMoving.play();
 
     }

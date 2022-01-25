@@ -6,7 +6,7 @@ package connect4;
  * If 4 places next to each other are equal,... then that means whoever´s turn it was, WON!
  */
 
-public class CheckIfWon {
+public class CheckIf {
     protected static boolean checkIfWon(char[][] gameBoard) { //access modifier (modified methods only - not the class itself) changed to protected
         boolean won = false;
 
@@ -23,8 +23,8 @@ public class CheckIfWon {
             // **VERTICALLY**
             //checks all column-combinations, to see if there are 4 of the same symbol (X or O) next to each other
             if (gameBoard[1][j] == gameBoard[2][j] && gameBoard[2][j] == gameBoard[3][j] && gameBoard[3][j] == gameBoard[4][j] ||
-                            gameBoard[2][j] == gameBoard[3][j] && gameBoard[3][j] == gameBoard[4][j] && gameBoard[4][j] == gameBoard[5][j] ||
-                            gameBoard[3][j] == gameBoard[4][j] && gameBoard[4][j] == gameBoard[5][j] && gameBoard[5][j] == gameBoard[6][j]) {
+                    gameBoard[2][j] == gameBoard[3][j] && gameBoard[3][j] == gameBoard[4][j] && gameBoard[4][j] == gameBoard[5][j] ||
+                    gameBoard[3][j] == gameBoard[4][j] && gameBoard[4][j] == gameBoard[5][j] && gameBoard[5][j] == gameBoard[6][j]) {
                 won = true;
             }
         }
@@ -57,7 +57,8 @@ public class CheckIfWon {
         return won;
     }
 
-    protected static boolean checkIfDraw(char[][] gameBoard) {  //checks if ALL fields are occupied without any winning combination
+    //checks if ALL fields are occupied without any winning combination
+    protected static boolean checkIfDraw(char[][] gameBoard) {
         boolean draw = false;
         int xy = 0;
         for (int i = 0; i < 7; i++) {

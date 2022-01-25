@@ -39,9 +39,9 @@ public class MakeMove {
             col0--;  // column counter starts at 6 (at the bottom) -> counts subtracted to know the place of the chip
 
         } else {
-                Reset.fullCol(controller.fullCol);
+            Reset.fullCol(controller.fullCol);
         }
-        if (CheckIfWon.checkIfDraw(Main.gameBoard)) {
+        if (CheckIf.checkIfDraw(Main.gameBoard)) {
             controller.draw();
         }
     }
@@ -67,12 +67,13 @@ public class MakeMove {
             if (counterForSwitchingPlayer % 2 == 1) {
                 Main.gameBoard[col1][1] = 'X';
             } else Main.gameBoard[col1][1] = 'O';
+
             col1--;
 
         } else {
-                Reset.fullCol(controller.fullCol);
+            Reset.fullCol(controller.fullCol);
         }
-        if (CheckIfWon.checkIfDraw(Main.gameBoard)) {
+        if (CheckIf.checkIfDraw(Main.gameBoard)) {
             controller.draw();
         }
     }
@@ -100,12 +101,13 @@ public class MakeMove {
             if (counterForSwitchingPlayer % 2 == 1) {
                 Main.gameBoard[col2][2] = 'X';
             } else Main.gameBoard[col2][2] = 'O';
+
             col2--;
 
         } else {
-                Reset.fullCol(controller.fullCol);
+            Reset.fullCol(controller.fullCol);
         }
-        if (CheckIfWon.checkIfDraw(Main.gameBoard)) {
+        if (CheckIf.checkIfDraw(Main.gameBoard)) {
             controller.draw();
         }
     }
@@ -132,12 +134,13 @@ public class MakeMove {
             if (counterForSwitchingPlayer % 2 == 1) {
                 Main.gameBoard[col3][3] = 'X';
             } else Main.gameBoard[col3][3] = 'O';
+
             col3--;
 
         } else {
-                Reset.fullCol(controller.fullCol);
+            Reset.fullCol(controller.fullCol);
         }
-        if (CheckIfWon.checkIfDraw(Main.gameBoard)) {
+        if (CheckIf.checkIfDraw(Main.gameBoard)) {
             controller.draw();
         }
     }
@@ -164,11 +167,13 @@ public class MakeMove {
             if (counterForSwitchingPlayer % 2 == 1) {
                 Main.gameBoard[col4][4] = 'X';
             } else Main.gameBoard[col4][4] = 'O';
+
             col4--;
+
         } else {
-                Reset.fullCol(controller.fullCol);
+            Reset.fullCol(controller.fullCol);
         }
-        if (CheckIfWon.checkIfDraw(Main.gameBoard)) {
+        if (CheckIf.checkIfDraw(Main.gameBoard)) {
             controller.draw();
         }
     }
@@ -199,10 +204,10 @@ public class MakeMove {
             col5--;
 
         } else {
-                Reset.fullCol(controller.fullCol);
+            Reset.fullCol(controller.fullCol);
         }
 
-        if (CheckIfWon.checkIfDraw(Main.gameBoard)) {
+        if (CheckIf.checkIfDraw(Main.gameBoard)) {
             controller.draw();
         }
     }
@@ -232,9 +237,9 @@ public class MakeMove {
             col6--;
 
         } else {
-                Reset.fullCol(controller.fullCol); //see class Reset
+            Reset.fullCol(controller.fullCol); //see class Reset
         }
-        if (CheckIfWon.checkIfDraw(Main.gameBoard)) {
+        if (CheckIf.checkIfDraw(Main.gameBoard)) {
             controller.draw();
         }
     }

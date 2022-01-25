@@ -49,6 +49,7 @@ public class Reset {
         }
     }
 
+    //the message of "It´s a Draw" will disappear
     protected static void drawReset(Label draw) {  //resets the game after a draw
         if (draw.isVisible()) {
             draw.setVisible((false));
